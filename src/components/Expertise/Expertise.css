@@ -1,0 +1,172 @@
+.expertise {
+  padding: 100px 2rem;
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.expertise__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.expertise__content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.expertise__left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: sticky;
+  top: 120px;
+}
+
+.expertise__title {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #000;
+  margin: 0;
+}
+
+.expertise__description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+.expertise__right {
+  display: flex;
+  flex-direction: column;
+}
+
+.expertise__skills {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.skill-item {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.skill-item:last-child {
+  border-bottom: none;
+}
+
+.skill-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.skill-item__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+}
+
+.skill-item__icon {
+  font-size: 1.2rem;
+  color: #000;
+  background-color: #000;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover .skill-item__icon {
+  background-color: #333;
+  transform: translateX(5px);
+}
+
+.skill-item__description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .expertise {
+    padding: 80px 2rem;
+  }
+  
+  .expertise__content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .expertise__left {
+    position: static;
+    text-align: left;
+  }
+  
+  .expertise__title {
+    font-size: 3rem;
+  }
+  
+  .expertise__description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .expertise {
+    padding: 60px 1rem;
+  }
+  
+  .expertise__content {
+    gap: 40px;
+  }
+  
+  .expertise__title {
+    font-size: 2.5rem;
+  }
+  
+  .skill-item {
+    padding: 2rem 0;
+  }
+  
+  .skill-item__title {
+    font-size: 1.3rem;
+  }
+  
+  .skill-item__description {
+    font-size: 0.95rem;
+  }
+  
+  .skill-item__header {
+    margin-bottom: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .expertise__title {
+    font-size: 2rem;
+  }
+  
+  .skill-item {
+    padding: 1.5rem 0;
+  }
+  
+  .skill-item__title {
+    font-size: 1.2rem;
+  }
+}
