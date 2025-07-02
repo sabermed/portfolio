@@ -1,7 +1,6 @@
 .about {
-  padding: 100px 2rem;
+  padding: 40px 2rem;
   background-color: #fff;
-  min-height: 100vh;
   display: flex;
   align-items: center;
 }
@@ -18,26 +17,6 @@
   gap: 80px;
   margin-bottom: 80px;
   align-items: start;
-}
-
-.about__left {
-  display: flex;
-  flex-direction: column;
-}
-
-.about__label {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-}
-
-.about__title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  line-height: 1.1;
-  color: #000;
-  margin: 0;
 }
 
 .about__right {
@@ -70,78 +49,6 @@
   border-bottom-color: #666;
 }
 
-.about__experiences {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.experience-item {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  gap: 2rem;
-  padding: 2rem 0;
-  border-bottom: 1px solid #e0e0e0;
-  align-items: center;
-}
-
-.experience-item:hover {
-  background-color: #fafafa;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-left: -1rem;
-  margin-right: -1rem;
-}
-
-.experience-item:last-child {
-  border-bottom: none;
-}
-
-.experience-item__left {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.experience-item__company {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #000;
-  margin: 0;
-}
-
-.experience-item__duration {
-  font-size: 0.9rem;
-  color: #666;
-  font-weight: 500;
-}
-
-.experience-item__center {
-  display: flex;
-  align-items: center;
-}
-
-.experience-item__position {
-  font-size: 1rem;
-  color: #333;
-  margin: 0;
-  line-height: 1.4;
-}
-
-.experience-item__right {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.experience-item__type {
-  background-color: #f0f0f0;
-  color: #666;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  white-space: nowrap;
-}
 
 /* Media Queries */
 @media (max-width: 992px) {
@@ -153,20 +60,6 @@
     grid-template-columns: 1fr;
     gap: 40px;
     margin-bottom: 60px;
-  }
-  
-  .about__title {
-    font-size: 2.8rem;
-  }
-  
-  .experience-item {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    text-align: left;
-  }
-  
-  .experience-item__right {
-    justify-content: flex-start;
   }
 }
 
@@ -180,23 +73,7 @@
     margin-bottom: 40px;
   }
   
-  .about__title {
-    font-size: 2.2rem;
-  }
-  
   .about__description {
     font-size: 1rem;
-  }
-  
-  .experience-item {
-    padding: 1.5rem 0;
-  }
-  
-  .experience-item__company {
-    font-size: 1.2rem;
-  }
-  
-  .experience-item__position {
-    font-size: 0.9rem;
   }
 }
