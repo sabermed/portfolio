@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "source": "./index.html",
+  "type": "module",
+  "name": "saber-portfolio",
+  "description": "Saber Mohamed - Full Stack Developer Portfolio",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "4.3.4",
+    "sass": "^1.69.5",
+    "vite": "6.0.4"
+  }
+}
