@@ -1,0 +1,355 @@
+.contact-page {
+  width: 100%;
+  background: white;
+  color: black;
+
+  .main-content {
+    min-height: 100vh;
+
+    .contact-hero {
+      padding: 80px 0 120px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .hero-content {
+        flex: 1;
+        max-width: 800px;
+
+        h1 {
+          font-family: 'Roxie Rossa', serif;
+          font-size: 96px;
+          font-weight: 400;
+          line-height: 1.1;
+          margin-bottom: 32px;
+          letter-spacing: -2px;
+        }
+
+        p {
+          font-family: 'Inter', sans-serif;
+          font-size: 24px;
+          font-weight: 400;
+          color: #666;
+          line-height: 1.6;
+        }
+      }
+
+      .availability {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 40px;
+
+        .status-indicator {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          .status-dot {
+            width: 12px;
+            height: 12px;
+            background: #4CAF50;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+          }
+
+          span {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: #4CAF50;
+          }
+        }
+
+        .local-time {
+          span {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: #888;
+          }
+        }
+      }
+    }
+
+    .contact-methods {
+      margin-bottom: 120px;
+
+      .methods-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+
+        .method-card {
+          padding: 40px 0;
+          border-top: 1px solid #e5e5e5;
+          transition: all 0.3s ease;
+
+          &:hover {
+            transform: translateY(-5px);
+          }
+
+          .method-header {
+            margin-bottom: 24px;
+
+            h3 {
+              font-family: 'Inter', sans-serif;
+              font-size: 14px;
+              font-weight: 600;
+              color: #888;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            }
+          }
+
+          .method-content {
+            .method-value {
+              display: block;
+              font-family: 'Inter', sans-serif;
+              font-size: 24px;
+              font-weight: 500;
+              color: #000;
+              margin-bottom: 12px;
+              text-decoration: none;
+              transition: color 0.3s ease;
+
+              &:hover {
+                color: #666;
+              }
+            }
+
+            .method-description {
+              font-family: 'Inter', sans-serif;
+              font-size: 16px;
+              font-weight: 400;
+              color: #666;
+              line-height: 1.5;
+            }
+          }
+        }
+      }
+    }
+
+    .services-overview {
+      margin-bottom: 120px;
+      padding: 80px 0;
+      background: #fafafa;
+
+      .services-content {
+        h2 {
+          font-family: 'Roxie Rossa', serif;
+          font-size: 64px;
+          font-weight: 400;
+          line-height: 1.2;
+          margin-bottom: 60px;
+          text-align: center;
+        }
+
+        .services-list {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 40px;
+
+          .service-item {
+            padding: 32px;
+            background: white;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+
+            &:hover {
+              transform: translateY(-5px);
+            }
+
+            h4 {
+              font-family: 'Inter', sans-serif;
+              font-size: 20px;
+              font-weight: 600;
+              margin-bottom: 12px;
+              color: #000;
+            }
+
+            p {
+              font-family: 'Inter', sans-serif;
+              font-size: 16px;
+              font-weight: 400;
+              color: #666;
+              line-height: 1.6;
+            }
+          }
+        }
+      }
+    }
+
+    .social-section {
+      margin-bottom: 80px;
+
+      h2 {
+        font-family: 'Roxie Rossa', serif;
+        font-size: 48px;
+        font-weight: 400;
+        line-height: 1.2;
+        margin-bottom: 40px;
+      }
+
+      .social-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+
+        .social-card {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 24px 32px;
+          border: 1px solid #e5e5e5;
+          border-radius: 50px;
+          text-decoration: none;
+          color: #000;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-2px);
+
+            svg {
+              transform: rotate(45deg);
+            }
+          }
+
+          span {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+          }
+
+          svg {
+            transition: transform 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+  }
+}
+
+@media (max-width: 992px) {
+  .contact-page {
+    .main-content {
+      .contact-hero {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .contact-methods {
+        .methods-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .services-overview {
+        .services-content {
+          .services-list {
+            grid-template-columns: 1fr;
+          }
+        }
+      }
+
+      .social-section {
+        .social-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    .main-content {
+      .contact-hero {
+        padding: 60px 0 80px 0;
+
+        .hero-content {
+          h1 {
+            font-size: 64px;
+          }
+
+          p {
+            font-size: 20px;
+          }
+        }
+      }
+
+      .contact-methods {
+        margin-bottom: 80px;
+
+        .methods-grid {
+          .method-card {
+            padding: 30px 0;
+
+            .method-content {
+              .method-value {
+                font-size: 20px;
+              }
+
+              .method-description {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+
+      .services-overview {
+        margin-bottom: 80px;
+        padding: 60px 0;
+
+        .services-content {
+          h2 {
+            font-size: 48px;
+          }
+
+          .services-list {
+            .service-item {
+              padding: 24px;
+
+              h4 {
+                font-size: 18px;
+              }
+
+              p {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+
+      .social-section {
+        h2 {
+          font-size: 36px;
+        }
+
+        .social-grid {
+          grid-template-columns: 1fr;
+
+          .social-card {
+            padding: 20px 24px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,10 +1,10 @@
 import React from "react";
 import "./ServicesSection.scss";
-import ai_local_seo from "../../../../assets/ai_local_seo.svg"
-import ai_local_responsive from "../../../../assets/ai_local_responsive.svg"
-import ai_local_motion from "../../../../assets/ai_local_motion.svg"
-import ai_local_refactoring from "../../../../assets/ai_local_refactoring.svg"
-import ai_local_ecommerce from "../../../../assets/ai_local_e-commerce.svg"
+import ai_local_seo from "../../../assets/ai_local_seo.svg"
+import ai_local_responsive from "../../../assets/ai_local_responsive.svg"
+import ai_local_motion from "../../../assets/ai_local_motion.svg"
+import ai_local_refactoring from "../../../assets/ai_local_refactoring.svg"
+import ai_local_ecommerce from "../../../assets/ai_local_e-commerce.svg"
 
 
 const servicesData = [

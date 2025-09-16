@@ -2,10 +2,10 @@ import React from "react";
 import "./ProjectsSection.scss";
 
 
-import p1 from "../../../../assets/projects/project1.png"
-import p2 from "../../../../assets/projects/project2.png"
-import p3 from "../../../../assets/projects/project3.png"
-import p4 from "../../../../assets/projects/project4.png"
+import p1 from "../../../assets/projects/project1.png"
+import p2 from "../../../assets/projects/project2.png"
+import p3 from "../../../assets/projects/project3.png"
+import p4 from "../../../assets/projects/project4.png"
 
 export const ProjectsSection = () => {
   const projects = [

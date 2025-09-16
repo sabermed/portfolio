@@ -1,6 +1,6 @@
 import React from "react";
 import "./AboutMeSection.scss";
-import meImg from "../../../../assets/me.png"
+import meImg from "../../../assets/me.png"
 
 const workExperience = [
   {

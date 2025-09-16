@@ -1,0 +1,197 @@
+.menu {
+  --bg-navigation: black;
+  --text-navigation: white;
+  width: 100%;
+  background: var(--bg-navigation);
+  color: var(--text-navigation);
+  padding: 45px 45px 0px 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 1000;
+
+  .logo {
+    opacity: 0;
+    width: 70%;
+    animation: 1.6s cubic-bezier(0.77, 0, 0.175, 1) forwards reveal;
+    pointer-events: all;
+
+    a {
+      display: block;
+      width: 87px;
+      height: 87px;
+      outline: none;
+    }
+
+    svg {
+      width: 87px;
+      height: 87px;
+      animation: 50s linear infinite rotating;
+    }
+  }
+
+  .navigation {
+    flex: 1;
+    min-width: 100px;
+    pointer-events: all;
+    padding: 2px;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: max-content;
+
+      .menu-item {
+        opacity: 0;
+        animation: 1.6s cubic-bezier(0.77, 0, 0.175, 1) forwards reveal;
+        margin-right: 30px;
+
+        &:nth-child(1) { animation-delay: 0.1s; }
+        &:nth-child(2) { animation-delay: 0.3s; }
+        &:nth-child(3) { animation-delay: 0.5s; }
+        &:nth-child(4) { animation-delay: 0.7s; }
+        &:nth-child(5) { animation-delay: 0.9s; }
+
+        a {
+          width: max-content;
+          height: 17px;
+          transition: all 0.6s;
+          display: block;
+          position: relative;
+          overflow: hidden;
+          color: var(--text-navigation);
+          text-decoration: none;
+          font-size: 14px;
+
+          &:before {
+            content: attr(data-label);
+            background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9' fill='none' viewBox='0 0 9 9'%3e%3cpath fill='%23fff' d='m9 4.608-.75-.732L5.03 7.02V0H3.97v7.02L.752 3.876 0 4.608 4.5 9 9 4.608Z'%3e%3c/path%3e%3c/svg%3e") 100% no-repeat;
+            margin-top: -17px;
+            padding-right: 15px;
+            transition: margin-top 0.6s;
+            display: block;
+          }
+        }
+      }
+
+      &:hover .menu-item a {
+        opacity: 0.5;
+      }
+
+      .menu-item a:hover {
+        opacity: 1;
+
+        &:before {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    pointer-events: all;
+    line-height: 1.2;
+
+    .coordinate {
+      list-style: none;
+      margin: 0 0 20px 0;
+      padding: 0;
+
+      li {
+        line-height: inherit;
+        opacity: 0;
+        animation: 1.6s cubic-bezier(0.77, 0, 0.175, 1) 0.3s forwards reveal;
+
+        &:nth-child(2) {
+          animation-delay: 0.5s;
+        }
+
+        button {
+          color: var(--text-navigation);
+          background-color: transparent;
+          font-family: inherit;
+          transition: transform 0.6s;
+          display: inline-block;
+          border: none;
+          cursor: pointer;
+          font-size: 12px;
+          text-align: inherit;
+
+          &:hover {
+            transform: translateX(5px);
+          }
+        }
+
+        p {
+          color: var(--text-navigation);
+          font-size: 12px;
+          margin: 0;
+        }
+      }
+    }
+
+    .contact {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        line-height: inherit;
+        opacity: 0;
+        animation: 1.6s cubic-bezier(0.77, 0, 0.175, 1) 0.7s forwards reveal;
+        position: relative;
+
+        &:nth-child(2) {
+          animation-delay: 0.9s;
+        }
+
+        a {
+          color: var(--text-navigation);
+          background-color: transparent;
+          font-family: inherit;
+          transition: transform 0.6s;
+          display: inline-block;
+          text-decoration: none;
+          font-size: 12px;
+
+          &:hover {
+            transform: translateX(5px);
+          }
+        }
+
+        i {
+          white-space: nowrap;
+          margin-top: 2px;
+          margin-left: 10px;
+          font-size: 12px;
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    padding: 25px 25px 0px 25px;
+
+    .logo {
+      width: 100%;
+
+      svg {
+        width: auto;
+        height: 90px;
+        margin-left: auto;
+      }
+    }
+
+    .info {
+      display: none;
+    }
+  }
+}
