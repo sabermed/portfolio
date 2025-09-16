@@ -1,20 +1,23 @@
-import React from "react";
-import { AboutMeSection } from "./sections/AboutMeSection/AboutMeSection";
-import { ContactSection } from "./sections/ContactSection/ContactSection";
-import { HeaderSection } from "./sections/HeaderSection/HeaderSection";
-import { ProjectsSection } from "./sections/ProjectsSection/ProjectsSection";
-import { ServicesSection } from "./sections/ServicesSection/ServicesSection";
+import { ContactFooter } from "../../components/ContactFooter/ContactFooter";
+import { AboutMeSection } from "./AboutMeSection/AboutMeSection";
+import { ServicesSection } from "./ServicesSection/ServicesSection";
+import { ProjectsSection } from "./ProjectsSection/ProjectsSection";
+import { HeroSection } from "./HeroSection/HeroSection";
 
-function index() {
+function Main() {
   return (
     <main className="main">
-      <HeaderSection />
-      <AboutMeSection />
-      <ServicesSection />
+      <HeroSection />
+      <section id="about">
+        <AboutMeSection />
+      </section>
+      <section id="services">
+        <ServicesSection />
+      </section>
       <ProjectsSection />
-      <ContactSection />
+      <ContactFooter />
     </main>
   );
-};
+}
 
-export default index;
+export default Main;

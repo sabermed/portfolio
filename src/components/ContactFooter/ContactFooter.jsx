@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./ContactSection.scss";
-import ellipseImg from "../../../../assets/ellipse.png";
+import "./ContactFooter.scss";
+import ellipseImg from "../../assets/ellipse.png";
 
-export const ContactSection = () => {
+export const ContactFooter = () => {
   const [currentTime, setCurrentTime] = useState('');
 
-  // Update time every second
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
@@ -39,7 +38,7 @@ export const ContactSection = () => {
   ];
 
   return (
-    <section className="contact-section">
+    <section className="contact-footer">
       <h4 className="contact-header">YOU GOT SOMETHING IN MIND ?</h4>
       <h1 className="contact-title">LET'S WORK TOGETHER</h1>
 
@@ -78,8 +77,8 @@ export const ContactSection = () => {
         </div>
       </div>
 
-      <div className="contact-footer">
-          <div className="contact-footer-left">
+      <div className="footer-bottom">
+          <div className="footer-left">
             <div className="footer-info">
               <span className="footer-label">VERSION</span>
               <span className="footer-value">2025 © Edition</span>
@@ -90,7 +89,7 @@ export const ContactSection = () => {
             </div>
           </div>
           
-          <div className="contact-footer-right">
+          <div className="footer-right">
             <span className="footer-label">SOCIALS</span>
             <div className="social-links">
               {socialLinks.map((social, index) => (
