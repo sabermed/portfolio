@@ -114,23 +114,6 @@ npm run dev
 npm run build
 ```
 
-### Environment Setup
-
-The project includes scripts to generate all required favicon and social media images:
-
-```bash
-# Using ImageMagick (recommended)
-chmod +x generate_icons.sh
-./generate_icons.sh
-
-# Using Node.js
-npm install sharp
-node generate-icons.js
-
-# Using PowerShell (Windows)
-.\generate_icons.ps1
-```
-
 ## Performance
 
 - **Lighthouse Score**: 95+ across all metrics
