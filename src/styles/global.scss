@@ -46,8 +46,9 @@ ul,ol {
 }
 
 .container {
-    padding: 0 var(--default-space);
+    width: 100%;
     max-width: 100%;
+    padding: 0 var(--default-space);
     margin: 0 auto
 }
 
