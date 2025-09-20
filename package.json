@@ -9,6 +9,8 @@
     "build": "vite build"
   },
   "dependencies": {
+    "framer-motion": "^12.23.16",
+    "gsap": "^3.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^4.0.11",

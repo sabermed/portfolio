@@ -1,0 +1,42 @@
+.animated-line-button-container {
+  --btn-size: 180px;
+  --line-color: #7E888F;
+  
+  position: relative;
+  margin-top: calc(var(--btn-size) / 2 + 32px);
+  margin-bottom: calc(var(--btn-size) / 2 + 32px);
+
+  .animated-line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--line-color);
+  }
+
+  // New slide animation wrapper
+  .button-slide-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, -50%);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    &.slide-in {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    --btn-size: 140px;
+    margin-top: calc(var(--btn-size) / 2 + 24px);
+    margin-bottom: calc(var(--btn-size) / 2 + 24px);
+  }
+
+  @media (max-width: 480px) {
+    --btn-size: 120px;
+    margin-top: calc(var(--btn-size) / 2 + 16px);
+    margin-bottom: calc(var(--btn-size) / 2 + 16px);
+  }
+}
