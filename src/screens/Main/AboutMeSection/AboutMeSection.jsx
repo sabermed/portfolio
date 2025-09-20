@@ -1,6 +1,7 @@
 import React from "react";
 import "./AboutMeSection.scss";
 import meImg from "../../../assets/me.png"
+import { useNavigate } from "react-router-dom";
 
 const workExperience = [
   {
@@ -30,6 +31,11 @@ const workExperience = [
 ];
 
 export const AboutMeSection = () => {
+  const navigate = useNavigate();
+  
+  const onGetInTouchClick = () => {
+    navigate("/contact")
+  }
   return (
     <section className="about-section">
       <div className="container">
@@ -63,7 +69,7 @@ export const AboutMeSection = () => {
             </div>
             <div className="cta-section">
               <div className="line"></div>
-              <button className="cta-button">
+              <button className="cta-button" onClick={onGetInTouchClick}>
                 Get in Touch
               </button>
             </div>

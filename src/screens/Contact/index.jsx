@@ -44,8 +44,8 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { name: 'LinkedIn', url: 'https://linkedin.com' },
-    { name: 'GitHub', url: 'https://github.com' },
+    { name: 'LinkedIn', url: 'https://linkedin.com/in/sabermed' },
+    { name: 'GitHub', url: 'https://github.com/sabermed' },
     { name: 'Facebook', url: 'https://facebook.com' },
     { name: 'YouTube', url: 'https://youtube.com' }
   ];

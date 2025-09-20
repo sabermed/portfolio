@@ -6,34 +6,54 @@ import p1 from "../../../assets/projects/project1.png"
 import p2 from "../../../assets/projects/project2.png"
 import p3 from "../../../assets/projects/project3.png"
 import p4 from "../../../assets/projects/project4.png"
+import ProjectCard from "../../../components/Project/ProjectCard";
+import { useNavigate } from "react-router-dom";
+
+const projects = [
+  {
+    id: 1,
+    title: "1 / Meeting App",
+    image: p1,
+    alt: "Meeting App Project 1",
+    category: "Web Application",
+    year: "2024",
+    slug: "meeting-app-1"
+  },
+  {
+    id: 2,
+    title: "2 / Learning Platform", 
+    image: p2,
+    alt: "Learning Platform",
+    category: "E-Learning",
+    year: "2024",
+    slug: "learning-platform"
+  },
+  {
+    id: 3,
+    title: "3 / E-Commerce Platform",
+    image: p3,
+    alt: "E-Commerce Platform",
+    category: "E-Commerce",
+    year: "2023",
+    slug: "ecommerce-platform"
+  },
+  {
+    id: 4,
+    title: "4 / Portfolio Website",
+    image: p4,
+    alt: "Portfolio Website",
+    category: "Portfolio",
+    year: "2023",
+    slug: "portfolio-website"
+  },
+];
 
 export const ProjectsSection = () => {
-  const projects = [
-    {
-      id: 1,
-      title: "1 / Meeting App",
-      image: p1,
-      alt: "Meeting App Project 1",
-    },
-    {
-      id: 2,
-      title: "2 / Meeting App",
-      image: p2,
-      alt: "Meeting App Project 2",
-    },
-    {
-      id: 3,
-      title: "3 / E-Commerce Platform",
-      image: p3,
-      alt: "E-Commerce Platform",
-    },
-    {
-      id: 4,
-      title: "4 / Portfolio Website",
-      image: p4,
-      alt: "Portfolio Website",
-    },
-  ];
+  const navigate = useNavigate();
+
+  const onMoreWorkClick = () => {
+    navigate("/works")
+  }
 
   return (
     <section className="projects-section">
@@ -44,21 +64,21 @@ export const ProjectsSection = () => {
 
         <div className="projects-grid">
           {projects.map((project) => (
-            <div key={project.id} className="project-item">
-              <h3>{project.title}</h3>
-              <div className="project-image-container">
-                <img
-                  src={project.image}
-                  alt={project.alt}
-                  className="project-image"
-                />
-              </div>
-            </div>
+            <ProjectCard
+              key={project.id}
+              id={project.id}
+              title={project.title}
+              image={project.image}
+              alt={project.alt}
+              slug={project.slug}
+              category={project.category}
+              year={project.year}
+            />
           ))}
         </div>
 
         <div className="projects-cta">
-          <button className="more-work-btn">
+          <button className="more-work-btn" onClick={onMoreWorkClick}>
             More Work
           </button>
         </div>
