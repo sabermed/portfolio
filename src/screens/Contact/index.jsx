@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { NavigationHeader } from "../../components/NavigationHeader/NavigationHeader";
+import AnimatedLineButton from "../../components/AnimatedLineButton/AnimatedLineButton";
+import CircularButton from "../../components/CircularButton/CircularButton";
 import "./Contact.scss";
 import ellipseImg from "../../assets/ellipse.png";
 import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
   const navigate = useNavigate();
-  const buttonRef = useRef(null);
-  const [isButtonVisible, setIsButtonVisible] = useState(false);
   const [currentTime, setCurrentTime] = useState("");
   
   const [formData, setFormData] = useState({
@@ -24,23 +24,6 @@ const Contact = () => {
     { name: "works", url: "/works" },
     { name: "contact", url: "/contact" }
   ];
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsButtonVisible(true);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (buttonRef.current) {
-      observer.observe(buttonRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     const updateTime = () => {
@@ -140,15 +123,15 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="send-button-container" ref={buttonRef}>
-            <div className="line"></div>
-            <button 
-              className={`send-email-btn ${isButtonVisible ? 'slide-in' : ''}`}
+          {/* Using the new components */}
+          <AnimatedLineButton buttonSize={180}>
+            <CircularButton 
               onClick={onSendEmailClick}
+              variant="primary"
             >
               Send
-            </button>
-          </div>
+            </CircularButton>
+          </AnimatedLineButton>
         </div>
         
         <div className="contact-details">
@@ -186,7 +169,7 @@ const Contact = () => {
         <div className="contact-page-footer-left">
           <div className="footer-info">
             <span className="footer-label">VERSION</span>
-            <span className="footer-value">2025 © Edition</span>
+            <span className="footer-value">2025 Â© Edition</span>
           </div>
           <div className="footer-info">
             <span className="footer-label">LOCAL TIME</span>

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./ContactFooter.scss";
+import AnimatedLineButton from "../AnimatedLineButton/AnimatedLineButton";
+import CircularButton from "../CircularButton/CircularButton";
 import ellipseImg from "../../assets/ellipse.png";
 import { useNavigate } from "react-router-dom";
 
@@ -64,12 +66,15 @@ export const ContactFooter = () => {
           </div>
         </div>
 
-        <div className="contact-button-container">
-          <div className="line"></div>
-          <button className="get-in-touch-btn" onClick={onGetInTouchClick}>
+        {/* Using the new components */}
+        <AnimatedLineButton buttonSize={180}>
+          <CircularButton 
+            onClick={onGetInTouchClick}
+            variant="primary"
+          >
             Get In Touch
-          </button>
-        </div>
+          </CircularButton>
+        </AnimatedLineButton>
 
         <div className="contact-buttons">
           {contactInfo.map((contact, index) => (
@@ -87,7 +92,7 @@ export const ContactFooter = () => {
           <div className="footer-left">
             <div className="footer-info">
               <span className="footer-label">VERSION</span>
-              <span className="footer-value">2025 © Edition</span>
+              <span className="footer-value">2025 Â© Edition</span>
             </div>
             <div className="footer-info">
               <span className="footer-label">LOCAL TIME</span>

@@ -1,5 +1,7 @@
 import React from "react";
 import "./AboutMeSection.scss";
+import AnimatedLineButton from "../../../components/AnimatedLineButton/AnimatedLineButton";
+import CircularButton from "../../../components/CircularButton/CircularButton";
 import meImg from "../../../assets/me.png"
 import { useNavigate } from "react-router-dom";
 
@@ -36,6 +38,7 @@ export const AboutMeSection = () => {
   const onGetInTouchClick = () => {
     navigate("/contact")
   }
+  
   return (
     <section className="about-section">
       <div className="container">
@@ -67,17 +70,22 @@ export const AboutMeSection = () => {
                 [FR]
               </a>
             </div>
-            <div className="cta-section">
-              <div className="line"></div>
-              <button className="cta-button" onClick={onGetInTouchClick}>
+            
+            {/* Using the new components */}
+            <AnimatedLineButton buttonSize={250} lineColor="#D0D0D0">
+              <CircularButton 
+                onClick={onGetInTouchClick}
+                variant="dark"
+                size={250}
+              >
                 Get in Touch
-              </button>
-            </div>
+              </CircularButton>
+            </AnimatedLineButton>
           </div>
 
           <div className="about-image">
             <p className="image-caption">
-              *Raised and based in Tunisia — working with teams and clients
+              *Raised and based in Tunisia â€" working with teams and clients
               worldwide.
             </p>
             <img

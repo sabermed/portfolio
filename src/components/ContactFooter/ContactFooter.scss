@@ -79,38 +79,6 @@
       }
     }
 
-    .contact-button-container{
-      --btn-size: 180px;
-      position: relative;
-      margin-top: calc(var(--btn-size) / 2 + 4px);
-      margin-bottom: calc(var(--btn-size) / 2 + 4px);
-      .line{
-        width: 100%;
-        height: 1px;
-        background-color: #7E888F;
-      }
-
-      .get-in-touch-btn {
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translate(-50%, -50%);
-        width: var(--btn-size);
-        height: var(--btn-size);
-        background: white;
-        color: black;
-        border-radius: 50%;
-        font-family: 'Inter', sans-serif;
-        font-size: 18px;
-        font-weight: 500;
-        transition: background 0.3s ease;
-  
-        &:hover {
-          background: #f0f0f0;
-        }
-      }
-    }
-
     .contact-buttons {
       display: flex;
       gap: 46px;
@@ -187,14 +155,6 @@
 
 @media (max-width: 992px) {
   .contact-footer{
-
-    .contact-content{
-      .contact-button-container{
-        margin-top: calc(var(--btn-size) / 2 + 15px);
-        margin-bottom: calc(var(--btn-size) / 2 + 15px);
-      }
-    }
-
     .footer-bottom {
       flex-direction: column;
       gap: 2rem;
@@ -237,19 +197,6 @@
       width: 100%;
       height: auto;
       margin-bottom: 60px;
-
-      .contact-button-container{
-        margin-top: calc(var(--btn-size) / 2 + 24px);
-        margin-bottom: calc(var(--btn-size) / 2 + 24px);
-
-        .get-in-touch-btn {
-          width: 140px;
-          height: 140px;
-          font-size: 14px;
-          margin: 0 auto 40px;
-          display: block;
-        }
-      }
 
       .profile-info {
         justify-content: center;
