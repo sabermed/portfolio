@@ -10,7 +10,6 @@ import './NotFound.scss';
 function NotFound() {
   return (
     <div className="not-found-page">
-      <NavigationHeader />
       
       <main className="main-content">
         <div className="container">
