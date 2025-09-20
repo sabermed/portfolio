@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./ContactFooter.scss";
 import ellipseImg from "../../assets/ellipse.png";
+import { useNavigate } from "react-router-dom";
 
 export const ContactFooter = () => {
   const [currentTime, setCurrentTime] = useState('');
+  const navigate = useNavigate();
+    
+  const onGetInTouchClick = () => {
+    navigate("/contact")
+  }
 
   useEffect(() => {
     const updateTime = () => {
@@ -60,7 +66,7 @@ export const ContactFooter = () => {
 
         <div className="contact-button-container">
           <div className="line"></div>
-          <button className="get-in-touch-btn">
+          <button className="get-in-touch-btn" onClick={onGetInTouchClick}>
             Get In Touch
           </button>
         </div>
