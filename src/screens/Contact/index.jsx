@@ -1,154 +1,216 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavigationHeader } from "../../components/NavigationHeader/NavigationHeader";
-import { ContactFooter } from "../../components/ContactFooter/ContactFooter";
 import "./Contact.scss";
+import ellipseImg from "../../assets/ellipse.png";
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
-  const [currentTime, setCurrentTime] = useState('');
+  const navigate = useNavigate();
+  const buttonRef = useRef(null);
+  const [isButtonVisible, setIsButtonVisible] = useState(false);
+  const [currentTime, setCurrentTime] = useState("");
+  
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+
+  const navigationLinks = [
+    { name: "about", url: "/about" },
+    { name: "experience", url: "/experience" },
+    { name: "services", url: "/services" },
+    { name: "works", url: "/works" },
+    { name: "contact", url: "/contact" }
+  ];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsButtonVisible(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (buttonRef.current) {
+      observer.observe(buttonRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
       const timeString = now.toLocaleTimeString('en-US', {
-        hour12: false,
+        hour12: true,
+        hour: '2-digit',
+        minute: '2-digit',
         timeZone: 'Africa/Tunis'
       });
-      setCurrentTime(`${timeString} PM (UTC+1)`);
+      setCurrentTime(`${timeString} UTC+1`);
     };
 
     updateTime();
-    const interval = setInterval(updateTime, 1000);
+    const interval = setInterval(updateTime, 60000);
 
     return () => clearInterval(interval);
   }, []);
 
-  const contactMethods = [
-    {
-      title: "Email",
-      value: "sabermed66@gmail.com",
-      link: "mailto:sabermed66@gmail.com",
-      description: "Drop me a line for project inquiries or collaborations"
-    },
-    {
-      title: "Phone",
-      value: "+216 29 462 796",
-      link: "tel:+21629462796",
-      description: "Available for calls during business hours (UTC+1)"
-    },
-    {
-      title: "Location",
-      value: "Tunisia, TN",
-      link: null,
-      description: "Based in Tunisia, working with clients worldwide"
-    }
-  ];
+  const handleInputChange = (field, value) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
 
-  const socialLinks = [
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/sabermed' },
-    { name: 'GitHub', url: 'https://github.com/sabermed' },
-    { name: 'Facebook', url: 'https://facebook.com' },
-    { name: 'YouTube', url: 'https://youtube.com' }
-  ];
+  const onSendEmailClick = () => {
+    // Handle form submission here
+    console.log("Form data:", formData);
+    // Add email sending logic here
+  };
 
   return (
     <div className="contact-page">
-      <NavigationHeader background="white" textColor="black" />
-      
-      <main className="main-content">
-        <div className="container">
-          {/* Hero Section */}
-          <section className="contact-hero">
-            <div className="hero-content">
-              <h1>LET'S WORK TOGETHER</h1>
-              <p>
-                Ready to bring your ideas to life? I'm available for new projects 
-                and collaborations. Let's discuss how we can create something amazing together.
-              </p>
-            </div>
-            
-            <div className="availability">
-              <div className="status-indicator">
-                <div className="status-dot"></div>
-                <span>Available for new projects</span>
-              </div>
-              <div className="local-time">
-                <span>Local time in Tunisia: {currentTime}</span>
-              </div>
-            </div>
-          </section>
-
-          {/* Contact Methods */}
-          <section className="contact-methods">
-            <div className="methods-grid">
-              {contactMethods.map((method, index) => (
-                <div key={index} className="method-card">
-                  <div className="method-header">
-                    <h3>{method.title}</h3>
-                  </div>
-                  <div className="method-content">
-                    {method.link ? (
-                      <a href={method.link} className="method-value">
-                        {method.value}
-                      </a>
-                    ) : (
-                      <span className="method-value">{method.value}</span>
-                    )}
-                    <p className="method-description">{method.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Services Overview */}
-          <section className="services-overview">
-            <div className="services-content">
-              <h2>What I Can Help You With</h2>
-              <div className="services-list">
-                <div className="service-item">
-                  <h4>Web Development</h4>
-                  <p>Full-stack web applications, responsive websites, and e-commerce platforms</p>
-                </div>
-                <div className="service-item">
-                  <h4>Performance Optimization</h4>
-                  <p>Speed improvements, Core Web Vitals optimization, and accessibility enhancements</p>
-                </div>
-                <div className="service-item">
-                  <h4>Technical Consulting</h4>
-                  <p>Architecture planning, code reviews, and technology recommendations</p>
-                </div>
-                <div className="service-item">
-                  <h4>Maintenance & Support</h4>
-                  <p>Ongoing support, updates, and troubleshooting for existing projects</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Social Links */}
-          <section className="social-section">
-            <h2>Connect With Me</h2>
-            <div className="social-grid">
-              {socialLinks.map((social, index) => (
-                <a 
-                  key={index}
-                  href={social.url} 
-                  className="social-card"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span>{social.name}</span>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M7 17l9.2-9.2M17 17V7H7"/>
-                  </svg>
-                </a>
-              ))}
-            </div>
-          </section>
+      <NavigationHeader background="black" textColor="white" />
+      <div className="contact-header">
+        <div className="avatar">
+          <img src={ellipseImg} alt="Saber Mohamed" />
         </div>
-      </main>
+        <h1 className="contact-title">LET'S WORK TOGETHER</h1>
+      </div>
+      <div className="contact-content">
+        <div className="contact-form">
+          <div className="contact-form-item">
+            <div className="form-number">01</div>
+            <div className="form-field">
+              <p className="form-label">What's your name?</p>
+              <input 
+                type="text"
+                placeholder="John Doe *"
+                value={formData.name}
+                onChange={(e) => handleInputChange('name', e.target.value)}
+                className="form-input"
+              />
+            </div>
+          </div>
 
-      <ContactFooter />
+          <div className="contact-form-item">
+            <div className="form-number">02</div>
+            <div className="form-field">
+              <p className="form-label">What's your email?</p>
+              <input 
+                type="email"
+                placeholder="john.doe@gmail.com *"
+                value={formData.email}
+                onChange={(e) => handleInputChange('email', e.target.value)}
+                className="form-input"
+              />
+            </div>
+          </div>
+
+          <div className="contact-form-item">
+            <div className="form-number">03</div>
+            <div className="form-field">
+              <p className="form-label">Your Subject?</p>
+              <input 
+                type="text"
+                placeholder="Web Development, Mobile App Development ..."
+                value={formData.subject}
+                onChange={(e) => handleInputChange('subject', e.target.value)}
+                className="form-input"
+              />
+            </div>
+          </div>
+
+          <div className="contact-form-item">
+            <div className="form-number">04</div>
+            <div className="form-field">
+              <p className="form-label">Your message</p>
+              <textarea 
+                placeholder="Hello Saber can you help me with ... *"
+                value={formData.message}
+                onChange={(e) => handleInputChange('message', e.target.value)}
+                className="form-textarea"
+                rows="4"
+              />
+            </div>
+          </div>
+
+          <div className="send-button-container" ref={buttonRef}>
+            <div className="line"></div>
+            <button 
+              className={`send-email-btn ${isButtonVisible ? 'slide-in' : ''}`}
+              onClick={onSendEmailClick}
+            >
+              Send
+            </button>
+          </div>
+        </div>
+        
+        <div className="contact-details">
+          <div className="contact-details-arrow">
+            <svg className="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="29" viewBox="0 0 26 29" fill="none">
+              <path d="M22.4983 28.9961C23.3224 29.0809 24.0592 28.4816 24.144 27.6575L25.5256 14.2284C25.6104 13.4043 25.0111 12.6676 24.187 12.5828C23.363 12.498 22.6262 13.0973 22.5414 13.9214L21.3132 25.8584L9.37625 24.6302C8.55217 24.5454 7.81539 25.1447 7.73061 25.9688C7.64582 26.7929 8.24513 27.5297 9.06921 27.6144L22.4983 28.9961ZM1.49996 1.50044L0.336319 2.44698L21.4882 28.4505L22.6518 27.504L23.8155 26.5575L2.66361 0.553909L1.49996 1.50044Z" fill="white"/>
+            </svg>
+          </div>
+          <div className="contact-about-info">
+            <h3>ABOUT ME</h3>
+            <p className="name">Saber Mohamed</p>
+            <p className="role">Role: Full Stack Developer</p>
+            <p className="location">Location: Tunisia</p>
+          </div>
+
+          <div className="contact-details-info">
+            <h3>CONTACT</h3>
+            <p className="email">sabermed66@gmail.com</p>
+            <p className="phone">+216 29 462 796</p>
+          </div>
+
+          <div className="contact-social-info">
+            <h3>SOCIALS</h3>
+            <a href="https://linkedin.com/in/sabermed" target="_blank" rel="noopener noreferrer">
+              linkedin.com/in/sabermed
+            </a>
+            <a href="https://github.com/sabermed" target="_blank" rel="noopener noreferrer">
+              github.com/sabermed
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="contact-page-footer">
+        <div className="contact-page-footer-left">
+          <div className="footer-info">
+            <span className="footer-label">VERSION</span>
+            <span className="footer-value">2025 © Edition</span>
+          </div>
+          <div className="footer-info">
+            <span className="footer-label">LOCAL TIME</span>
+            <span className="footer-value">{currentTime}</span>
+          </div>
+        </div>
+        
+        <div className="contact-page-footer-right">
+          <span className="footer-label">SOCIALS</span>
+          <div className="navigation-links">
+            {navigationLinks.map((link, index) => (
+              <a 
+                key={index}
+                href={link.url} 
+                className="navigation-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
