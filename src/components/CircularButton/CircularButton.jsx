@@ -11,7 +11,7 @@ const CircularButton = ({
   variant = 'primary',
   enableMagnetic = true,
   enableHoverEffect = true,
-  hoverBackgroundColor = '#455CE9',
+  hoverBackgroundColor = '#c6d0d0',
   ...props 
 }) => {
   const circle = useRef(null);

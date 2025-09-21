@@ -152,15 +152,15 @@ export const NavigationHeader = ({background, textColor}) => {
           </ul>
           <ul className="contact">
             <li>
-              <a href="mailto:sabermed66@gmail.com" target="_self">
+              <Link to="/contact" target="_self">
                 sabermed66@gmail.com
-              </a>
+              </Link>
               <i></i>
             </li>
             <li>
-              <a href="tel:+21629462796" target="_self">
+              <Link to="/contact" target="_self">
                 tel: (+216) 29-462-796
-              </a>
+              </Link>
               <i></i>
             </li>
           </ul>
