@@ -1,9 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
-import "./AboutMeSection.scss";
+import React, { useRef } from "react";
+import { motion } from "framer-motion";
+import { 
+    wordSlideUp, 
+    buttonReveal, 
+    curtainReveal, 
+    imageScale, 
+    experienceItemReveal 
+} from "./animate";
+import { useOneWayAnimation } from "../../../hooks/useOneWayAnimation";
 import AnimatedLineButton from "../../../components/AnimatedLineButton/AnimatedLineButton";
 import CircularButton from "../../../components/CircularButton/CircularButton";
-import meImg from "../../../assets/me.png"
 import { useNavigate } from "react-router-dom";
+import meImg from "../../../assets/me.png";
+import styles from './AboutMeSection.module.scss';
 
 const workExperience = [
   {
@@ -36,63 +45,40 @@ export const AboutMeSection = () => {
   const navigate = useNavigate();
   const aboutRef = useRef(null);
   const experienceRef = useRef(null);
-  const [aboutInView, setAboutInView] = useState(false);
-  const [experienceInView, setExperienceInView] = useState(false);
+  
+  // Simple one-way animation triggers
+  const aboutAnimated = useOneWayAnimation(aboutRef, { threshold: 0.1, margin: "0px 0px -200px 0px" });
+  const experienceAnimated = useOneWayAnimation(experienceRef, { threshold: 0.1, margin: "0px 0px -100px 0px" });
   
   const onGetInTouchClick = () => {
-    navigate("/contact")
-  }
+    navigate("/contact");
+  };
   
-  // Text for word-by-word animation
   const mainDescriptionText = "Over the past 3+ years I've worked on projects ranging from eCommerce, CMS, SEO..., Whether I'm improving website performance, setting up APIs, or building interactive frontends, my goal is simple: create digital experiences that people enjoy and businesses rely on.";
   const resumeText = "My resume (pdf ~90kb) : [EN] [FR]";
   const imageCaptionText = "*Raised and based in Tunisia - working with teams and clients worldwide.";
   const experienceTitleText = "Work Experience";
   
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.2,
-      rootMargin: '-50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.target === aboutRef.current && entry.isIntersecting) {
-          setAboutInView(true);
-        }
-        if (entry.target === experienceRef.current && entry.isIntersecting) {
-          setExperienceInView(true);
-        }
-      });
-    }, observerOptions);
-
-    if (aboutRef.current) observer.observe(aboutRef.current);
-    if (experienceRef.current) observer.observe(experienceRef.current);
-
-    return () => observer.disconnect();
-  }, []);
-  
   return (
-    <section className="about-section" id="about">
-      <div className="container">
-        <div className="about-content" ref={aboutRef}>
-          <div className="about-text">
-            <p className="main-description">
+    <section className={styles.aboutSection} id="about">
+      <div className={`container ${styles.containerLayout}`}>
+        <div className={styles.aboutContent} ref={aboutRef}>
+          <div className={styles.aboutText}>
+            <p className={styles.mainDescription}>
               {mainDescriptionText.split(" ").map((word, index) => (
-                <span key={index} className="word-mask">
-                  <span 
-                    className={`word ${aboutInView ? 'animate' : ''}`}
-                    style={{
-                      animationDelay: `${index * 0.12}s`
-                    }}
+                <span key={index} className={styles.mask}>
+                  <motion.span 
+                    variants={wordSlideUp} 
+                    custom={index} 
+                    animate={aboutAnimated ? "open" : "initial"}
                   >
                     {word}
-                  </span>
+                  </motion.span>
                 </span>
               ))}
             </p>
 
-            <div className="resume-links">
+            <div className={styles.resumeLinks}>
               {resumeText.split(" ").map((word, index) => {
                 if (word.includes("[EN]") || word.includes("[FR]")) {
                   const linkText = word.includes("[EN]") ? "[EN]" : "[FR]";
@@ -101,38 +87,40 @@ export const AboutMeSection = () => {
                     : "https://saber.dev/cv-saber-fr.pdf";
                   
                   return (
-                    <span key={index} className="word-mask">
-                      <a
+                    <span key={index} className={styles.mask}>
+                      <motion.a
                         href={href}
                         rel="noopener noreferrer"
                         target="_blank"
-                        className={`word ${aboutInView ? 'animate' : ''}`}
-                        style={{
-                          animationDelay: `${1.2 + (index * 0.12)}s`
-                        }}
+                        variants={wordSlideUp}
+                        custom={index + 25}
+                        animate={aboutAnimated ? "open" : "initial"}
                       >
                         {linkText}
-                      </a>
+                      </motion.a>
                     </span>
                   );
                 }
                 
                 return (
-                  <span key={index} className="word-mask">
-                    <span 
-                      className={`word ${aboutInView ? 'animate' : ''}`}
-                      style={{
-                        animationDelay: `${1.2 + (index * 0.03)}s`
-                      }}
+                  <span key={index} className={styles.mask}>
+                    <motion.span 
+                      variants={wordSlideUp}
+                      custom={index + 25}
+                      animate={aboutAnimated ? "open" : "initial"}
                     >
                       {word}
-                    </span>
+                    </motion.span>
                   </span>
                 );
               })}
             </div>
             
-            <div className={`button-container ${aboutInView ? 'animate' : ''}`}>
+            <motion.div 
+              className={styles.buttonContainer}
+              variants={buttonReveal}
+              animate={aboutAnimated ? "open" : "initial"}
+            >
               <AnimatedLineButton buttonSize={250} lineColor="#D0D0D0">
                 <CircularButton 
                   onClick={onGetInTouchClick}
@@ -142,74 +130,81 @@ export const AboutMeSection = () => {
                   Get in Touch
                 </CircularButton>
               </AnimatedLineButton>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="about-image">
-            <div className="image-caption">
+          <div className={styles.aboutImage}>
+            <div className={styles.imageCaption}>
               {imageCaptionText.split(" ").map((word, index) => (
-                <span key={index} className="word-mask">
-                  <span 
-                    className={`word ${aboutInView ? 'animate' : ''}`}
-                    style={{
-                      animationDelay: `${1.5 + (index * 0.12)}s`
-                    }}
+                <span key={index} className={styles.mask}>
+                  <motion.span 
+                    variants={wordSlideUp}
+                    custom={index + 35}
+                    animate={aboutAnimated ? "open" : "initial"}
                   >
                     {word}
-                  </span>
+                  </motion.span>
                 </span>
               ))}
             </div>
-            <div className="image-container">
-              <img
+            
+            <div className={styles.imageContainer}>
+              <motion.img
                 src={meImg}
                 alt="Saber Mohamed"
-                className={`profile-image ${aboutInView ? 'animate' : ''}`}
+                className={styles.profileImage}
+                variants={imageScale}
+                animate={aboutAnimated ? "open" : "initial"}
               />
-              <div className={`curtain ${aboutInView ? 'animate' : ''}`}></div>
+              <motion.div 
+                className={styles.curtain}
+                variants={curtainReveal}
+                animate={aboutAnimated ? "open" : "initial"}
+              />
             </div>
           </div>
         </div>
 
-        <div className="experience-section" id="experience" ref={experienceRef}>
-          <h2 className="experience-title">
+        <div className={styles.experienceSection} id="experience" ref={experienceRef}>
+          <h2 className={styles.experienceTitle}>
             {experienceTitleText.split(" ").map((word, index) => (
-              <span key={index} className="word-mask">
-                <span 
-                  className={`word ${experienceInView ? 'animate' : ''}`}
-                  style={{
-                    animationDelay: `${index * 0.12}s`
-                  }}
+              <span key={index} className={styles.mask}>
+                <motion.span 
+                  variants={wordSlideUp}
+                  custom={index}
+                  animate={experienceAnimated ? "open" : "initial"}
                 >
                   {word}
-                </span>
+                </motion.span>
               </span>
             ))}
           </h2>
 
-          <div className="experience-list">
+          <div className={styles.experienceList}>
             {workExperience.map((job, index) => (
-              <div 
+              <motion.div 
                 key={index} 
-                className={`experience-item ${experienceInView ? 'animate' : ''}`}
-                style={{ animationDelay: `${0.3 + (index * 0.15)}s` }}
+                className={styles.experienceItem}
+                variants={experienceItemReveal}
+                custom={index}
+                animate={experienceAnimated ? "open" : "initial"}
               >
-                <div className="company-info">
+                <div className={styles.companyInfo}>
                   <h3>{job.company}</h3>
-                  <div className="period">
-                    <span className="dot"></span>
+                  <div className={styles.period}>
+                    <span className={styles.dot}></span>
                     <span>{job.period}</span>
                   </div>
                 </div>
 
-                <div className="position">
+                <div className={styles.position}>
                   {job.position}
                 </div>
 
-                <div className="job-type">
-                  <span className="badge">{job.type}</span>
+                <div className={styles.jobType}>
+                  <span className={styles.badge}>{job.type}</span>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
