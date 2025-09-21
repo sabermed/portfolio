@@ -92,7 +92,7 @@ export const ContactFooter = () => {
           <div className="footer-left">
             <div className="footer-info">
               <span className="footer-label">VERSION</span>
-              <span className="footer-value">2025 Â© Edition</span>
+              <span className="footer-value">2025 © Edition</span>
             </div>
             <div className="footer-info">
               <span className="footer-label">LOCAL TIME</span>

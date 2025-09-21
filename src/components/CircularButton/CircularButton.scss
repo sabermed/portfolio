@@ -30,9 +30,9 @@
   }
 
   // Hover effect for buttons that have it enabled
-  &.has-hover-effect:hover {
+  &.dark.has-hover-effect:hover {
     .button-text {
-      color: white;
+      color: black;
     }
   }
 

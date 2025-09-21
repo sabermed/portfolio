@@ -12,19 +12,11 @@
     background-color: var(--line-color);
   }
 
-  // New slide animation wrapper
   .button-slide-wrapper {
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-100%, -50%);
-    opacity: 0;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-    &.slide-in {
-      transform: translate(-50%, -50%);
-      opacity: 1;
-    }
+    will-change: transform;
   }
 
   // Responsive adjustments

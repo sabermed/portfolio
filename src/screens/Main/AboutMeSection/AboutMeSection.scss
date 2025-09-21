@@ -20,6 +20,24 @@
         font-weight: 400;
         line-height: 1.4;
         margin-bottom: 32px;
+        
+        // Word-by-word animation styles
+        .word-mask {
+          position: relative;
+          overflow: hidden;
+          display: inline-flex;
+          margin-right: 8px;
+        }
+        
+        .word {
+          display: inline-block;
+          transform: translateY(100%);
+          transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+          
+          &.animate {
+            transform: translateY(0%);
+          }
+        }
       }
 
       .resume-links {
@@ -28,8 +46,26 @@
         font-weight: 400;
         line-height: 1.4;
         margin-bottom: 100px;
+        
+        // Word-by-word animation styles like main description
+        .word-mask {
+          position: relative;
+          overflow: hidden;
+          display: inline-flex;
+          margin-right: 8px;
+        }
+        
+        .word {
+          display: inline-block;
+          transform: translateY(100%);
+          transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+          
+          &.animate {
+            transform: translateY(0%);
+          }
+        }
 
-        a {
+        a.word {
           text-decoration: underline;
           color: inherit;
 
@@ -46,12 +82,42 @@
       flex-direction: column;
       align-items: center;
 
-      img {
+      .image-container {
+        position: relative;
         width: 322px;
         height: 499px;
-        object-fit: cover;
-        background: #d9d9d9;
         margin-bottom: 16px;
+        overflow: hidden;
+        
+        .profile-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          background: #d9d9d9;
+          opacity: 1;
+          transform: scale(1.1);
+          transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+          
+          &.animate {
+            transform: scale(1);
+          }
+        }
+        
+        .curtain {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: white;
+          transform: translateY(0%);
+          transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+          
+          &.animate {
+            transform: translateY(-100%);
+            transition-delay: 0.2s;
+          }
+        }
       }
 
       .image-caption {
@@ -62,6 +128,24 @@
         text-align: left;
         max-width: 185px;
         margin-bottom: 32px;
+        
+        // Word-by-word animation styles like main description
+        .word-mask {
+          position: relative;
+          overflow: hidden;
+          display: inline-flex;
+          margin-right: 4px;
+        }
+        
+        .word {
+          display: inline-block;
+          transform: translateY(100%);
+          transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+          
+          &.animate {
+            transform: translateY(0%);
+          }
+        }
       }
     }
   }
@@ -69,12 +153,30 @@
   .experience-section {
     margin-bottom: 48px;
 
-    h2 {
+    .experience-title {
       font-family: 'Roxie Rossa', serif;
       font-size: 64px;
       font-weight: 400;
       line-height: 1.1;
       margin-bottom: 32px;
+      
+      // Word-by-word animation styles like main description
+      .word-mask {
+        position: relative;
+        overflow: hidden;
+        display: inline-flex;
+        margin-right: 12px;
+      }
+      
+      .word {
+        display: inline-block;
+        transform: translateY(100%);
+        transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        
+        &.animate {
+          transform: translateY(0%);
+        }
+      }
     }
 
     .experience-list {
@@ -84,6 +186,17 @@
         justify-content: space-between;
         padding: 24px 0;
         border-bottom: 1px solid #e5e5e5;
+        
+        // Faster sequential animation for experience items
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+        
+        &.animate {
+          opacity: 1;
+          transform: translateY(0);
+          // Delay is set inline in JSX: 0.3s + (index * 0.15s)
+        }
 
         &:last-child {
           border-bottom: none;
@@ -171,7 +284,7 @@
     }
 
     .experience-section {
-      h2 {
+      .experience-title {
         font-size: 48px;
       }
 

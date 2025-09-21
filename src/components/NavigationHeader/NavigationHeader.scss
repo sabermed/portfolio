@@ -13,7 +13,8 @@
   .logo {
     opacity: 0;
     width: 70%;
-    animation: 1.6s cubic-bezier(0.77, 0, 0.175, 1) forwards reveal;
+    // Synchronized with the overall animation flow
+    animation: 0.6s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards reveal;
     pointer-events: all;
 
     a {
@@ -46,19 +47,20 @@
 
       .menu-item {
         opacity: 0;
-        animation: 1.6s cubic-bezier(0.77, 0, 0.175, 1) forwards reveal;
+        animation: 0.6s cubic-bezier(0.77, 0, 0.175, 1) forwards reveal;
         margin-right: 30px;
 
+        // Compressed timing to end by 0.5s
         &:nth-child(1) { animation-delay: 0.1s; }
-        &:nth-child(2) { animation-delay: 0.3s; }
-        &:nth-child(3) { animation-delay: 0.5s; }
-        &:nth-child(4) { animation-delay: 0.7s; }
-        &:nth-child(5) { animation-delay: 0.9s; }
+        &:nth-child(2) { animation-delay: 0.2s; }
+        &:nth-child(3) { animation-delay: 0.3s; }
+        &:nth-child(4) { animation-delay: 0.4s; }
+        &:nth-child(5) { animation-delay: 0.5s; }
 
         a {
           width: max-content;
           height: 17px;
-          transition: all 0.6s;
+          transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1); // Smoother transition
           display: block;
           position: relative;
           overflow: hidden;
@@ -71,7 +73,7 @@
             background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9' fill='none' viewBox='0 0 9 9'%3e%3cpath fill='%23fff' d='m9 4.608-.75-.732L5.03 7.02V0H3.97v7.02L.752 3.876 0 4.608 4.5 9 9 4.608Z'%3e%3c/path%3e%3c/svg%3e") 100% no-repeat;
             margin-top: -17px;
             padding-right: 15px;
-            transition: margin-top 0.6s;
+            transition: margin-top 0.3s cubic-bezier(0.77, 0, 0.175, 1);
             display: block;
           }
         }
@@ -105,17 +107,17 @@
       li {
         line-height: inherit;
         opacity: 0;
-        animation: 1.6s cubic-bezier(0.77, 0, 0.175, 1) 0.3s forwards reveal;
+        animation: 0.4s cubic-bezier(0.77, 0, 0.175, 1) forwards reveal;
 
-        &:nth-child(2) {
-          animation-delay: 0.5s;
-        }
+        // Coordinates animate in parallel with navigation
+        &:nth-child(1) { animation-delay: 0.2s; }
+        &:nth-child(2) { animation-delay: 0.3s; }
 
         button {
           color: var(--text-navigation);
           background-color: transparent;
           font-family: inherit;
-          transition: transform 0.6s;
+          transition: transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
           display: inline-block;
           border: none;
           cursor: pointer;
@@ -143,18 +145,18 @@
       li {
         line-height: inherit;
         opacity: 0;
-        animation: 1.6s cubic-bezier(0.77, 0, 0.175, 1) 0.7s forwards reveal;
+        animation: 0.4s cubic-bezier(0.77, 0, 0.175, 1) forwards reveal;
         position: relative;
 
-        &:nth-child(2) {
-          animation-delay: 0.9s;
-        }
+        // Contact items animate in parallel with coordinates
+        &:nth-child(1) { animation-delay: 0.4s; }
+        &:nth-child(2) { animation-delay: 0.5s; }
 
         a {
           color: var(--text-navigation);
           background-color: transparent;
           font-family: inherit;
-          transition: transform 0.6s;
+          transition: transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
           display: inline-block;
           text-decoration: none;
           font-size: 12px;
@@ -173,6 +175,27 @@
         }
       }
     }
+  }
+}
+
+// Improved reveal animation - more natural movement
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 

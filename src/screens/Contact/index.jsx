@@ -18,9 +18,9 @@ const Contact = () => {
   });
 
   const navigationLinks = [
-    { name: "about", url: "/about" },
-    { name: "experience", url: "/experience" },
-    { name: "services", url: "/services" },
+    { name: "about", url: "/#about" },
+    { name: "experience", url: "/#experience" },
+    { name: "services", url: "/#services" },
     { name: "works", url: "/works" },
     { name: "contact", url: "/contact" }
   ];
@@ -178,14 +178,14 @@ const Contact = () => {
         </div>
         
         <div className="contact-page-footer-right">
-          <span className="footer-label">SOCIALS</span>
+          <span className="footer-label">LINKS</span>
           <div className="navigation-links">
             {navigationLinks.map((link, index) => (
               <a 
                 key={index}
                 href={link.url} 
                 className="navigation-link"
-                target="_blank"
+                target="_self"
                 rel="noopener noreferrer"
               >
                 {link.name}
