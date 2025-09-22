@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "source": "./index.html",
+  "type": "module",
+  "name": "saber-portfolio",
+  "description": "Saber Mohamed - Full Stack Developer Portfolio",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "framer-motion": "^12.23.16",
+    "gsap": "^3.13.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-error-boundary": "^4.0.11",
+    "react-helmet-async": "^2.0.4",
+    "react-router-dom": "^6.20.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "4.3.4",
+    "sass": "^1.69.5",
+    "vite": "6.0.4"
+  }
+}
