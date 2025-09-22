@@ -1,0 +1,861 @@
+.projectDetailPage {
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+
+  .mainContent {
+    // Ensure consistent container padding across all sections
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+  }
+
+  // Hero Section - Title/Description Above Image
+  .projectHero {
+    padding-top: 60px; // Account for NavigationHeader
+    background: #000;
+
+    .heroText {
+      text-align: center;
+      padding: 80px 0 60px 0;
+
+      .projectCategory {
+        display: inline-block;
+        padding: 8px 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50px;
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+        backdrop-filter: blur(10px);
+      }
+
+      .projectTitle {
+        font-family: 'Roxie Rossa', serif;
+        font-size: clamp(48px, 8vw, 120px);
+        font-weight: 400;
+        line-height: 1.1;
+        margin-bottom: 24px;
+        letter-spacing: -2px;
+        background: linear-gradient(135deg, #fff 0%, #ccc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .projectDescription {
+        font-family: 'Inter', sans-serif;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+    }
+
+    .heroImageContainer {
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+
+      .heroImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin-top: 0;
+      }
+    }
+  }
+
+  // Project Overview Section
+  .projectOverview {
+    padding: 120px 0;
+    background: linear-gradient(180deg, #000 0%, #111 100%);
+
+    .overviewGrid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 80px;
+      align-items: start;
+
+      .overviewContent {
+        h2 {
+          font-family: 'Roxie Rossa', serif;
+          font-size: 64px;
+          font-weight: 400;
+          line-height: 1.2;
+          margin-bottom: 32px;
+          color: #fff;
+        }
+
+        .longDescription {
+          font-family: 'Inter', sans-serif;
+          font-size: 20px;
+          font-weight: 300;
+          line-height: 1.8;
+          color: rgba(255, 255, 255, 0.8);
+          margin-bottom: 60px;
+        }
+
+        .techSection {
+          h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          }
+
+          .techGrid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+
+            .techItem {
+              padding: 8px 16px;
+              background: rgba(255, 255, 255, 0.1);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              border-radius: 8px;
+              font-family: 'Inter', sans-serif;
+              font-size: 14px;
+              font-weight: 500;
+              color: rgba(255, 255, 255, 0.9);
+              transition: all 0.3s ease;
+
+              &:hover {
+                background: rgba(255, 255, 255, 0.2);
+                transform: translateY(-2px);
+              }
+            }
+          }
+        }
+      }
+
+      // Simple meta info instead of overview-stats cards
+      .projectMeta {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .metaItem {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          .metaLabel {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          }
+
+          .metaValue {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  // Interactive Gallery Section - Fixed container padding
+  .projectGallery {
+    padding: 120px 0;
+    background: #111;
+
+    .galleryHeader {
+      margin-bottom: 60px;
+
+      h2 {
+        font-family: 'Roxie Rossa', serif;
+        font-size: 48px;
+        font-weight: 400;
+        color: #fff;
+      }
+    }
+
+    .galleryMain {
+      .mainImageContainer {
+        position: relative;
+        margin-bottom: 40px;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #222;
+
+        .mainImage {
+          width: 100%;
+          height: 600px;
+          object-fit: contain;
+          transition: all 0.6s ease;
+          animation: fadeInScale 0.6s ease;
+        }
+
+        .imageCounter {
+          position: absolute;
+          bottom: 24px;
+          right: 24px;
+          padding: 12px 20px;
+          background: rgba(0, 0, 0, 0.8);
+          border-radius: 25px;
+          font-family: 'Inter', sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          color: #fff;
+          backdrop-filter: blur(10px);
+        }
+
+        // Navigation arrows
+        .navArrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 50px;
+          height: 50px;
+          border: 2px solid rgba(255, 255, 255, 0.3);
+          border-radius: 50%;
+          background: rgba(0, 0, 0, 0.5);
+          color: #fff;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          backdrop-filter: blur(10px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            background: rgba(0, 0, 0, 0.8);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-50%) scale(1.1);
+          }
+
+          &.prevArrow {
+            left: 24px;
+          }
+
+          &.nextArrow {
+            right: 24px;
+          }
+        }
+      }
+
+      .galleryThumbnailsWrapper {
+        position: relative;
+
+        .galleryThumbnails {
+          display: flex;
+          justify-content: center;
+          gap: 16px;
+          overflow-x: auto;
+          padding: 16px 0;
+          scroll-behavior: smooth;
+          
+          // Hide scrollbar but keep functionality
+          scrollbar-width: none; // Firefox
+          -ms-overflow-style: none; // IE/Edge
+          
+          &::-webkit-scrollbar {
+            display: none; // Chrome/Safari/Webkit
+          }
+
+          // Touch scrolling for mobile
+          -webkit-overflow-scrolling: touch;
+
+          .thumbnail {
+            flex-shrink: 0;
+            width: 120px;
+            height: 80px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+
+            &.active {
+              border-color: #fff;
+              transform: scale(1.05);
+            }
+
+            &:hover {
+              transform: scale(1.02);
+            }
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+
+        .scrollIndicators {
+          margin-top: 16px;
+          text-align: center;
+
+          .scrollHint {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+  }
+
+  // Features & Challenges Split - Fixed container padding
+  .featuresChallenges {
+    padding: 120px 0;
+    background: #000;
+
+    .splitGrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+
+      .featuresSection,
+      .challengesSection {
+        h3 {
+          font-family: 'Roxie Rossa', serif;
+          font-size: 36px;
+          font-weight: 400;
+          color: #fff;
+          margin-bottom: 40px;
+        }
+
+        .featuresList,
+        .challengesList {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+        }
+
+        .featureItem {
+          display: flex;
+          align-items: flex-start;
+          gap: 20px;
+          padding: 24px;
+          background: rgba(255, 255, 255, 0.03);
+          border-radius: 12px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-4px);
+          }
+
+          .featureNumber {
+            font-family: 'Roxie Rossa', serif;
+            font-size: 24px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.4);
+            min-width: 40px;
+          }
+
+          p {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+          }
+        }
+
+        .challengeItem {
+          display: flex;
+          align-items: flex-start;
+          gap: 16px;
+          padding: 20px;
+          border-left: 3px solid rgba(255, 255, 255, 0.2);
+          transition: all 0.3s ease;
+
+          &:hover {
+            border-left-color: #fff;
+            transform: translateX(8px);
+          }
+
+          .challengeIcon {
+            font-size: 20px;
+            margin-top: 2px;
+          }
+
+          p {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  // Project CTA Section - Fixed container padding
+  .projectCta {
+    padding: 80px 0;
+    background: #111;
+    text-align: center;
+
+    .ctaContent {
+      h3 {
+        font-family: 'Roxie Rossa', serif;
+        font-size: 48px;
+        font-weight: 400;
+        color: #fff;
+        margin-bottom: 40px;
+      }
+
+      .ctaButtons {
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+
+        .ctaButton {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 20px 40px;
+          border-radius: 50px;
+          font-family: 'Inter', sans-serif;
+          font-size: 16px;
+          font-weight: 500;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          transform: perspective(1px);
+
+          &.primary {
+            background: #fff;
+            color: #000;
+
+            &:hover {
+              background: #f0f0f0;
+              transform: translateY(-3px);
+              box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+            }
+          }
+
+          &.secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+
+            &:hover {
+              background: rgba(255, 255, 255, 0.1);
+              border-color: #fff;
+              transform: translateY(-3px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Next Project Section - Fixed container padding
+  .nextProject {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #111 0%, #000 100%);
+
+    .nextProjectContent {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+
+      .nextProjectText {
+        .nextLabel {
+          font-family: 'Inter', sans-serif;
+          font-size: 14px;
+          font-weight: 600;
+          color: rgba(255, 255, 255, 0.6);
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 16px;
+          display: block;
+        }
+
+        .nextTitle {
+          font-family: 'Roxie Rossa', serif;
+          font-size: 64px;
+          font-weight: 400;
+          line-height: 1.2;
+          color: #fff;
+          margin-bottom: 24px;
+        }
+
+        .nextDescription {
+          font-family: 'Inter', sans-serif;
+          font-size: 18px;
+          font-weight: 300;
+          line-height: 1.6;
+          color: rgba(255, 255, 255, 0.7);
+          margin-bottom: 40px;
+        }
+
+        .nextButton {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 20px 40px;
+          background: transparent;
+          color: #fff;
+          border: 2px solid rgba(255, 255, 255, 0.3);
+          border-radius: 50px;
+          font-family: 'Inter', sans-serif;
+          font-size: 16px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+            transform: translateX(8px);
+
+            svg {
+              transform: translateX(4px);
+            }
+          }
+
+          svg {
+            transition: transform 0.3s ease;
+          }
+        }
+      }
+
+      .nextProjectPreview {
+        border-radius: 16px;
+        overflow: hidden;
+        position: relative;
+        height: 400px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.6s ease;
+        }
+
+        &:hover img {
+          transform: scale(1.05);
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, transparent 50%);
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  // Animations
+  @keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  // Responsive Design
+  @media (max-width: 1200px) {
+    .mainContent .container {
+      padding: 0 30px;
+    }
+
+    .projectOverview .overviewGrid {
+      grid-template-columns: 1fr;
+      gap: 60px;
+
+      .projectMeta {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        .metaItem {
+          min-width: 200px;
+        }
+      }
+    }
+
+    .nextProject .nextProjectContent {
+      grid-template-columns: 1fr;
+      gap: 60px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .mainContent .container {
+      padding: 0 20px;
+    }
+
+    .projectHero {
+      padding-top: 40px;
+
+      .heroText {
+        padding: 60px 0 40px 0;
+
+        .projectTitle {
+          font-size: clamp(36px, 8vw, 72px);
+          margin-bottom: 16px;
+        }
+
+        .projectDescription {
+          font-size: 18px;
+        }
+
+        .projectCategory {
+          font-size: 12px;
+          padding: 6px 16px;
+          margin-bottom: 24px;
+        }
+      }
+
+      .heroImageContainer {
+        height: 60vh;
+
+        .heroImage {
+          height: 110%;
+        }
+      }
+    }
+
+    .projectOverview {
+      padding: 80px 0;
+
+      .overviewContent {
+        h2 {
+          font-size: 42px;
+          margin-bottom: 24px;
+        }
+
+        .longDescription {
+          font-size: 18px;
+          margin-bottom: 40px;
+        }
+
+        .techSection {
+          h3 {
+            font-size: 16px;
+            margin-bottom: 16px;
+          }
+
+          .techGrid .techItem {
+            font-size: 13px;
+            padding: 6px 12px;
+          }
+        }
+      }
+
+      .projectMeta {
+        .metaItem .metaValue {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .projectGallery {
+      padding: 80px 0;
+
+      .galleryHeader {
+        margin-bottom: 40px;
+
+        h2 {
+          font-size: 32px;
+        }
+
+        .galleryControls .playPause {
+          width: 50px;
+          height: 50px;
+          font-size: 16px;
+        }
+      }
+
+      .galleryMain {
+        .mainImageContainer {
+          .mainImage {
+            height: 300px;
+          }
+
+          .imageCounter {
+            bottom: 16px;
+            right: 16px;
+            padding: 8px 16px;
+            font-size: 12px;
+          }
+        }
+
+        .galleryThumbnails {
+          .thumbnail {
+            width: 80px;
+            height: 60px;
+          }
+        }
+      }
+    }
+
+    .featuresChallenges {
+      padding: 80px 0;
+
+      .splitGrid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+
+        .featuresSection,
+        .challengesSection {
+          h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+          }
+
+          .featureItem {
+            padding: 20px;
+
+            .featureNumber {
+              font-size: 20px;
+            }
+
+            p {
+              font-size: 14px;
+            }
+          }
+
+          .challengeItem {
+            padding: 16px;
+
+            p {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+
+    .projectCta {
+      padding: 60px 0;
+
+      .ctaContent {
+        h3 {
+          font-size: 32px;
+          margin-bottom: 30px;
+        }
+
+        .ctaButtons {
+          flex-direction: column;
+          align-items: center;
+          gap: 16px;
+
+          .ctaButton {
+            width: 250px;
+            justify-content: center;
+            padding: 16px 32px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .nextProject {
+      padding: 80px 0;
+
+      .nextProjectContent {
+        gap: 40px;
+
+        .nextProjectText {
+          .nextTitle {
+            font-size: 42px;
+            margin-bottom: 16px;
+          }
+
+          .nextDescription {
+            font-size: 16px;
+            margin-bottom: 30px;
+          }
+
+          .nextButton {
+            padding: 16px 32px;
+            font-size: 14px;
+          }
+        }
+
+        .nextProjectPreview {
+          height: 250px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .projectHero {
+      .heroText {
+        padding: 40px 0 30px 0;
+
+        .projectTitle {
+          font-size: clamp(28px, 8vw, 48px);
+        }
+
+        .projectDescription {
+          font-size: 16px;
+        }
+      }
+
+      .heroImageContainer {
+        height: 50vh;
+      }
+    }
+
+    .projectOverview {
+      .projectMeta {
+        flex-direction: column;
+        gap: 20px;
+
+        .metaItem {
+          min-width: auto;
+        }
+      }
+    }
+
+    .projectGallery {
+      .galleryMain {
+        .mainImageContainer .mainImage {
+          height: 200px;
+        }
+
+        .galleryThumbnails {
+          .thumbnail {
+            width: 60px;
+            height: 45px;
+          }
+        }
+      }
+    }
+
+    .projectCta {
+      .ctaContent .ctaButtons .ctaButton {
+        width: 200px;
+        padding: 14px 28px;
+        font-size: 13px;
+      }
+    }
+  }
+}

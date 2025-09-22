@@ -70,7 +70,8 @@
 
           &:before {
             content: attr(data-label);
-            background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9' fill='none' viewBox='0 0 9 9'%3e%3cpath fill='%23fff' d='m9 4.608-.75-.732L5.03 7.02V0H3.97v7.02L.752 3.876 0 4.608 4.5 9 9 4.608Z'%3e%3c/path%3e%3c/svg%3e") 100% no-repeat;
+            color: var(--text-navigation);
+            background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9' fill='none' viewBox='0 0 9 9'%3e%3cpath fill='currentColor' d='m9 4.608-.75-.732L5.03 7.02V0H3.97v7.02L.752 3.876 0 4.608 4.5 9 9 4.608Z'%3e%3c/path%3e%3c/svg%3e") 100% no-repeat;
             margin-top: -17px;
             padding-right: 15px;
             transition: margin-top 0.3s cubic-bezier(0.77, 0, 0.175, 1);
