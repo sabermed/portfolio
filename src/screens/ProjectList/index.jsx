@@ -3,11 +3,10 @@ import "./ProjectList.scss";
 import { NavigationHeader } from "../../components/NavigationHeader/NavigationHeader";
 import { ContactFooter } from "../../components/ContactFooter/ContactFooter";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
-
-import { projects } from "../../data/projects"; 
+import { projects } from "../../data/projects";
+import { pageContent } from "../../data/content";
 
 const ProjectList = () => {
-
   return (
     <div className="project-list-page">
       <NavigationHeader background="white" textColor="black" />
@@ -15,11 +14,8 @@ const ProjectList = () => {
       <main className="main-content">
         <div className="container">
           <header className="page-header">
-            <h1>WORKS</h1>
-            <p>
-              A collection of projects I've worked on, spanning web development,
-              e-commerce, and interactive applications.
-            </p>
+            <h1>{pageContent.works.title}</h1>
+            <p>{pageContent.works.description}</p>
           </header>
 
           <div className="projects-grid">

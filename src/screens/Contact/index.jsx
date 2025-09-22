@@ -4,10 +4,15 @@ import AnimatedLineButton from "../../components/AnimatedLineButton/AnimatedLine
 import CircularButton from "../../components/CircularButton/CircularButton";
 import "./Contact.scss";
 import ellipseImg from "../../assets/ellipse.png";
-import { useNavigate } from "react-router-dom";
+import { 
+  personalInfo, 
+  navigationItems, 
+  socialLinks, 
+  pageContent,
+  ctaTexts 
+} from "../../data/content";
 
 const Contact = () => {
-  const navigate = useNavigate();
   const [currentTime, setCurrentTime] = useState("");
   
   const [formData, setFormData] = useState({
@@ -17,14 +22,6 @@ const Contact = () => {
     message: ""
   });
 
-  const navigationLinks = [
-    { name: "about", url: "/#about" },
-    { name: "experience", url: "/#experience" },
-    { name: "services", url: "/#services" },
-    { name: "works", url: "/works" },
-    { name: "contact", url: "/contact" }
-  ];
-
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
@@ -32,9 +29,9 @@ const Contact = () => {
         hour12: true,
         hour: '2-digit',
         minute: '2-digit',
-        timeZone: 'Africa/Tunis'
+        timeZone: personalInfo.timezone
       });
-      setCurrentTime(`${timeString} UTC+1`);
+      setCurrentTime(`${timeString} ${personalInfo.timezoneDisplay}`);
     };
 
     updateTime();
@@ -61,19 +58,19 @@ const Contact = () => {
       <NavigationHeader background="black" textColor="white" />
       <div className="contact-header">
         <div className="avatar">
-          <img src={ellipseImg} alt="Saber Mohamed" />
+          <img src={ellipseImg} alt={personalInfo.fullName} />
         </div>
-        <h1 className="contact-title">LET'S WORK TOGETHER</h1>
+        <h1 className="contact-title">{pageContent.contact.pageTitle}</h1>
       </div>
       <div className="contact-content">
         <div className="contact-form">
           <div className="contact-form-item">
             <div className="form-number">01</div>
             <div className="form-field">
-              <p className="form-label">What's your name?</p>
+              <p className="form-label">{pageContent.contact.form.nameLabel}</p>
               <input 
                 type="text"
-                placeholder="John Doe *"
+                placeholder={pageContent.contact.form.namePlaceholder}
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
                 className="form-input"
@@ -84,10 +81,10 @@ const Contact = () => {
           <div className="contact-form-item">
             <div className="form-number">02</div>
             <div className="form-field">
-              <p className="form-label">What's your email?</p>
+              <p className="form-label">{pageContent.contact.form.emailLabel}</p>
               <input 
                 type="email"
-                placeholder="john.doe@gmail.com *"
+                placeholder={pageContent.contact.form.emailPlaceholder}
                 value={formData.email}
                 onChange={(e) => handleInputChange('email', e.target.value)}
                 className="form-input"
@@ -98,10 +95,10 @@ const Contact = () => {
           <div className="contact-form-item">
             <div className="form-number">03</div>
             <div className="form-field">
-              <p className="form-label">Your Subject?</p>
+              <p className="form-label">{pageContent.contact.form.subjectLabel}</p>
               <input 
                 type="text"
-                placeholder="Web Development, Mobile App Development ..."
+                placeholder={pageContent.contact.form.subjectPlaceholder}
                 value={formData.subject}
                 onChange={(e) => handleInputChange('subject', e.target.value)}
                 className="form-input"
@@ -112,9 +109,9 @@ const Contact = () => {
           <div className="contact-form-item">
             <div className="form-number">04</div>
             <div className="form-field">
-              <p className="form-label">Your message</p>
+              <p className="form-label">{pageContent.contact.form.messageLabel}</p>
               <textarea 
-                placeholder="Hello Saber can you help me with ... *"
+                placeholder={pageContent.contact.form.messagePlaceholder}
                 value={formData.message}
                 onChange={(e) => handleInputChange('message', e.target.value)}
                 className="form-textarea"
@@ -129,7 +126,7 @@ const Contact = () => {
               onClick={onSendEmailClick}
               variant="primary"
             >
-              Send
+              {pageContent.contact.form.sendButton}
             </CircularButton>
           </AnimatedLineButton>
         </div>
@@ -141,26 +138,30 @@ const Contact = () => {
             </svg>
           </div>
           <div className="contact-about-info">
-            <h3>ABOUT ME</h3>
-            <p className="name">Saber Mohamed</p>
-            <p className="role">Role: Full Stack Developer</p>
-            <p className="location">Location: Tunisia</p>
+            <h3>{pageContent.contact.details.aboutTitle}</h3>
+            <p className="name">{personalInfo.fullName}</p>
+            <p className="role">Role: {personalInfo.role}</p>
+            <p className="location">Location: {personalInfo.location}</p>
           </div>
 
           <div className="contact-details-info">
-            <h3>CONTACT</h3>
-            <p className="email">sabermed66@gmail.com</p>
-            <p className="phone">+216 29 462 796</p>
+            <h3>{pageContent.contact.details.contactTitle}</h3>
+            <p className="email">{personalInfo.email}</p>
+            <p className="phone">{personalInfo.phone}</p>
           </div>
 
           <div className="contact-social-info">
-            <h3>SOCIALS</h3>
-            <a href="https://linkedin.com/in/sabermed" target="_blank" rel="noopener noreferrer">
-              linkedin.com/in/sabermed
-            </a>
-            <a href="https://github.com/sabermed" target="_blank" rel="noopener noreferrer">
-              github.com/sabermed
-            </a>
+            <h3>{pageContent.contact.details.socialsTitle}</h3>
+            {socialLinks.slice(0, 2).map((social, index) => (
+              <a 
+                key={index}
+                href={social.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                {social.username}
+              </a>
+            ))}
           </div>
         </div>
       </div>
@@ -169,18 +170,18 @@ const Contact = () => {
         <div className="contact-page-footer-left">
           <div className="footer-info">
             <span className="footer-label">VERSION</span>
-            <span className="footer-value">2025 Â© Edition</span>
+            <span className="footer-value">{pageContent.footer.version}</span>
           </div>
           <div className="footer-info">
-            <span className="footer-label">LOCAL TIME</span>
+            <span className="footer-label">{pageContent.footer.localTimeLabel}</span>
             <span className="footer-value">{currentTime}</span>
           </div>
         </div>
         
         <div className="contact-page-footer-right">
-          <span className="footer-label">LINKS</span>
+          <span className="footer-label">{pageContent.footer.linksLabel}</span>
           <div className="navigation-links">
-            {navigationLinks.map((link, index) => (
+            {navigationItems.map((link, index) => (
               <a 
                 key={index}
                 href={link.url} 
