@@ -101,9 +101,9 @@ export const NavigationHeader = ({background, textColor}) => {
             </li>
             <li className="menu-item">
               <a 
-                href="#experience" 
+                href="/#experience" 
                 data-label="experience"
-                className={isActiveLink('/') && location.hash === '#experience' ? 'active' : ''}
+                className={isActiveLink('/') && location.hash === '/#experience' ? 'active' : ''}
               >
                 experience
               </a>

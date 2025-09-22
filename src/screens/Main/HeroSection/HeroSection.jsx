@@ -40,7 +40,7 @@ export const HeroSection = () => {
             animate="open"
           >
             FULL-STACK DEVELOPER &
-            FRONTEND SPECIALIST
+            SOLUTION ARCHITECT
           </motion.div>
           
           <motion.div 

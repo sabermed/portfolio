@@ -11,28 +11,28 @@ import styles from './ServicesSection.module.scss';
 const servicesData = [
   {
     icon: ai_local_ecommerce,
-    title: "Custom Web & App Development",
-    description: "I design and build complete web solutions — from user-friendly frontends to reliable backends that scale with your needs.",
-  },
-  {
-    icon: ai_local_seo,
-    title: "Performance & Optimization",
-    description: "Slow websites lose users. I focus on speed, accessibility, and Core Web Vitals to make sure your app runs fast on any device.",
+    title: "Full Stack Web Development",
+    description: "End-to-end web applications using React.js, Vue.js, Node.js, and Python/Django. From interactive frontends to scalable APIs with real-time features (WebSocket, Socket.IO). Perfect for SaaS platforms, e-commerce, and enterprise tools.",
   },
   {
     icon: ai_local_responsive,
-    title: "Responsive & Cross-Browser Design",
-    description: "I ensure websites adapt perfectly across all screen sizes and browsers, so everyone has the same smooth experience.",
+    title: "Mobile App Development",
+    description: "Cross-platform iOS and Android apps using React Native and Expo. Includes geolocation, payment integration (Stripe), cloud services (AWS), and native device features. Ideal for startups and businesses going mobile-first.",
   },
   {
     icon: ai_local_motion,
-    title: "Interactive Experiences",
-    description: "Enhance websites with captivating motions using cutting-edge technologies like Three.js and GSAP, incorporating dynamic and interactive elements to boost user engagement.",
+    title: "Specialized Solutions",
+    description: "Complex technical implementations: 3D model viewers (Three.js, IFC.js), data visualization dashboards (D3.js, Chart.js), video conferencing (WebRTC), and real-time collaboration tools. For industries requiring advanced technical solutions.",
+  },
+  {
+    icon: ai_local_seo,
+    title: "Performance & DevOps",
+    description: "Application optimization, CI/CD pipeline setup, Docker containerization, and cloud deployment (AWS, GCP). Achieve 90%+ Lighthouse scores and reduce deployment times by 60%. Essential for production-ready applications.",
   },
   {
     icon: ai_local_refactoring,
-    title: "Deployment & Maintenance",
-    description: "From Docker to cloud hosting, I help deploy, monitor, and maintain projects so they stay stable and secure long after launch.",
+    title: "Legacy System Modernization",
+    description: "Transform outdated systems with modern tech stacks, add new features, and improve performance by 30%+. Includes API integration, database migration, and progressive enhancement. Perfect for established businesses needing technical upgrades.",
   },
 ];
 
@@ -50,7 +50,7 @@ export const ServicesSection = () => {
         >
           <span className={styles.subtitle}>What I Offer</span>
           <h2 className={styles.title}>Services</h2>
-          <p className={styles.description}>Explore My Web Development Services.</p>
+          <p className={styles.description}>Explore My Full-Stack Development Services.</p>
         </motion.div>
 
         <div className={styles.servicesList}>
