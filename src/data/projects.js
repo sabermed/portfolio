@@ -1,4 +1,3 @@
-// Real project data based on Saber's actual work and screenshots
 import blueVoyant1 from "../assets/projects/bluevoyant/1.png"
 import blueVoyant2 from "../assets/projects/bluevoyant/2.png"
 import blueVoyant3 from "../assets/projects/bluevoyant/3.png"
@@ -132,50 +131,81 @@ export const projects = [
   },
   {
     id: 2,
-    title: "2 / Solar Panel Design Platform",
+    title: "2 / Event Gamification & Engagement Platform",
     image: dashboard1,
-    alt: "Solar Panel Design and Estimation Tool",
-    category: "Simulation Platform", 
-    year: "2023",
-    slug: "solar-panel-design-platform",
+    alt: "Dual-Sided Event Gamification Platform - Admin & User Portals",
+    category: "Enterprise Software", 
+    year: "2022-2023",
+    slug: "event-gamification-platform",
     featured: true,
-    description: "OpenSolar-like tool for solar panel placement and energy estimation. Allows users to simulate panel placements, estimate energy production, and calculate cost efficiencies.",
-    longDescription: "A comprehensive solar energy design platform that empowers users to create optimal solar installations. The tool combines 3D modeling, geographic data, and energy calculations to provide accurate estimates for solar projects. Used by solar installers and energy consultants across multiple markets.",
+    
+    description: "Complete event gamification ecosystem with dual portals: admin dashboard for event organizers to manage activities/badges/rewards, and user portal for participants to track progress, earn achievements, and redeem rewards.",
+    
+    longDescription: "A comprehensive dual-sided event gamification platform built for a Saudi Arabian IT company and their client to maximize participation and engagement at organizational events. The platform consists of two distinct interfaces: an advanced admin dashboard where event organizers create activities, design badge systems, manage rewards, and track analytics; and a polished user portal where participants view upcoming events, track their achievements, compete on leaderboards, and redeem rewards. The system bridges event management with gamification psychology, driving measurable increases in attendance and engagement through points, badges, tiered progression, and tangible rewards.",
+    
     mainImage: dashboard1,
     gallery: [
-      dashboard1, dashboard2, dashboard3, dashboard4, dashboard5,
+      dashboard1, dashboard1, dashboard2, dashboard3, dashboard4, dashboard5,
       dashboard6, dashboard7, dashboard8, dashboard9, dashboard10,
-      dashboard11, dashboard12, dashboard13, dashboard14, dashboard15
+      dashboard11, dashboard12, dashboard13, dashboard14, dashboard15,
     ],
+    
     technologies: [
-      "React.js", "Three.js", "Node.js", "MongoDB", 
-      "Express.js", "Solar API", "Google Maps API", "PDF Generation"
+      "React.js", "Node.js", "MongoDB", "Express.js",
+      "Chart.js", "D3.js", "Socket.IO", "Redux", "JWT Authentication",
+      "CSV Processing", "Image Upload", "Real-time Notifications",
+      "Responsive Design", "GSAP Animations"
     ],
+    
     features: [
-      "3D roof modeling and panel placement",
-      "Shading analysis and optimization",
-      "Energy production calculations", 
-      "Cost-benefit analysis",
-      "Weather data integration",
-      "Automated proposal generation"
+      "Comprehensive admin dashboard with real-time statistics and data visualizations",
+      "Activities management - create point-earning activities tied to specific events",
+      "Custom badge system with image upload, point thresholds, tier progression, and status controls",
+      "Rewards catalog with product images, descriptions, and point-based redemption",
+      "Advanced user management with persona categorization (Student, Teacher, Artist, Writer, etc.)",
+      "Multi-tier leaderboard showing top performers by points, badges, and rewards earned",
+      "Detailed user profiles with activity history, badge collections, and admin comment threads",
+      "Bulk user import/export via CSV with validation and error handling",
+      "User access control with blacklisting and suspension capabilities",
+      "Integrated support ticket system (Points, Rewards, Complaints, Suggestions categories)",
+      "Clean user dashboard showing personal stats (rank, badges, points, rewards)",
+      "Interactive leaderboard with current placement and top performers",
+      "Badge progression tracker with tier visualization and requirements",
+      "Events browser with filtering by type, date, and city",
+      "Personal notification preferences and profile management",
+      "Smooth animations and micro-interactions throughout the UI",
+      "Mobile-responsive design for on-site event access"
     ],
+    
     challenges: [
-      "Accurate 3D modeling of complex roof structures",
-      "Real-time shading calculations",
-      "Integration with multiple solar APIs",
-      "Performance optimization for large installations"
+      "Translating complex Figma designs into pixel-perfect React components across two distinct portals",
+      "Implementing smooth animations and micro-interactions without impacting performance",
+      "Building reusable component library to maintain consistency across admin and user interfaces",
+      "Ensuring responsive behavior across desktop, tablet, and mobile devices",
+      "Coordinating with backend team to define and implement API contracts",
+      "Handling complex state management for real-time leaderboards and notifications",
+      "Optimizing rendering performance for data-heavy admin dashboard tables and charts",
+      "Implementing CSV upload UI with progress indicators and error feedback",
+      "Creating intuitive form validation and error handling across numerous admin forms",
+      "Meeting tight deadline while maintaining code quality and documentation"
     ],
+    
     results: [
-      "30% faster design process",
-      "95% accuracy in energy predictions", 
-      "50+ successful installations",
-      "25% increase in conversion rates"
+      "Successfully delivered complete frontend on schedule, enabling project launch on time",
+      "Achieved 90%+ Google Lighthouse performance scores on both portals",
+      "Pixel-perfect implementation matching Figma designs across all 50+ screens",
+      "Smooth animations and transitions enhancing user experience without performance impact",
+      "Helped backend team complete remaining API endpoints to meet project deadline",
+      "Zero critical bugs reported in production frontend after launch",
+      "Mobile-responsive design supporting seamless on-site event participation",
+      "Deployed platform now managing 12,000+ active users across multiple events"
     ],
-    client: "ENEFFIC",
-    role: "Full Stack Developer", 
+    
+    client: "IT Company (Saudi Arabia) - B2B Project",
+    role: "Frontend Developer + Backend Support", 
     duration: "6 months",
-    team: "2 developers, 1 designer",
-    status: "Production",
+    team: "Frontend lead + Backend team (3-4 developers) + 1 designer",
+    status: "Completed",
     liveUrl: null,
     githubUrl: null
   },
@@ -324,7 +354,56 @@ export const projects = [
     status: "Production",
     liveUrl: null,
     githubUrl: null
-  }
+  },
+  {
+    id: 6,
+    title: "2 / Solar Panel Design Platform",
+    image: dashboard1,
+    alt: "Solar Panel Design and Estimation Tool",
+    category: "Simulation Platform", 
+    year: "2023",
+    slug: "solar-panel-design-platform",
+    featured: true,
+    description: "OpenSolar-like tool for solar panel placement and energy estimation. Allows users to simulate panel placements, estimate energy production, and calculate cost efficiencies.",
+    longDescription: "A comprehensive solar energy design platform that empowers users to create optimal solar installations. The tool combines 3D modeling, geographic data, and energy calculations to provide accurate estimates for solar projects. Used by solar installers and energy consultants across multiple markets.",
+    mainImage: dashboard1,
+    gallery: [
+      dashboard1, dashboard2, dashboard3, dashboard4, dashboard5,
+      dashboard6, dashboard7, dashboard8, dashboard9, dashboard10,
+      dashboard11, dashboard12, dashboard13, dashboard14, dashboard15
+    ],
+    technologies: [
+      "React.js", "Three.js", "Node.js", "MongoDB", 
+      "Express.js", "Solar API", "Google Maps API", "PDF Generation"
+    ],
+    features: [
+      "3D roof modeling and panel placement",
+      "Shading analysis and optimization",
+      "Energy production calculations", 
+      "Cost-benefit analysis",
+      "Weather data integration",
+      "Automated proposal generation"
+    ],
+    challenges: [
+      "Accurate 3D modeling of complex roof structures",
+      "Real-time shading calculations",
+      "Integration with multiple solar APIs",
+      "Performance optimization for large installations"
+    ],
+    results: [
+      "30% faster design process",
+      "95% accuracy in energy predictions", 
+      "50+ successful installations",
+      "25% increase in conversion rates"
+    ],
+    client: "ENEFFIC",
+    role: "Full Stack Developer", 
+    duration: "6 months",
+    team: "2 developers, 1 designer",
+    status: "Production",
+    liveUrl: null,
+    githubUrl: null
+  },
 ];
 
 // Featured projects for homepage
