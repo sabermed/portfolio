@@ -298,7 +298,7 @@ const ProjectDetail = () => {
                   <div className={styles.featuresList}>
                     {project.features.map((feature, index) => (
                       <div key={index} className={styles.featureItem}>
-                        <span className={styles.featureNumber}>0{index + 1}</span>
+                        <span className={styles.featureNumber}>{index >= 9 ? index + 1 : "0"+(index + 1)}</span>
                         <p>{feature}</p>
                       </div>
                     ))}

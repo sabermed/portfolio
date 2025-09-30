@@ -65,48 +65,67 @@ import projectManager7 from "../assets/projects/project manager/7.png"
 export const projects = [
   {
     id: 1,
-    title: "1 / BlueVoyant Analytics Dashboard",
+    title: "1 / BlueVoyant M365 Security Analytics",
     image: blueVoyant1,
-    alt: "BlueVoyant Interactive Analytics Dashboard",
-    category: "Data Visualization",
+    alt: "BlueVoyant M365 Secure Score Analytics Platform",
+    category: "Security Analytics",
     year: "2023",
-    slug: "bluevoyant-analytics-dashboard",
+    slug: "bluevoyant-m365-security-analytics",
     featured: true,
-    description: "PowerBI-inspired data visualization platform with dynamic reporting and advanced calculations. Enterprise-responsive UI with real-time data processing capabilities.",
-    longDescription: "An advanced analytics dashboard that transforms complex data into interactive visualizations. Built with a focus on performance and user experience, this platform handles large datasets while maintaining smooth interactions. Features include custom chart builders, real-time data streaming, and collaborative reporting tools.",
+    
+    description: "Privacy-first security analytics platform for Microsoft 365 Secure Score assessment. Enables BlueVoyant's clients to analyze their security data without sharing sensitive files.",
+    
+    longDescription: "A client-facing security analytics platform built for BlueVoyant (Microsoft Partner) to provide their enterprise clients with self-service M365 Secure Score analysis. The platform features a privacy-first architecture where sensitive security data never leaves the client's browser - files are processed entirely client-side while the backend handles only calculations. This approach allows organizations to analyze their Microsoft 365 security posture, track compliance recommendations, and generate reports without exposing confidential data to third parties.",
+    
     mainImage: blueVoyant1,
     gallery: [
       blueVoyant1, blueVoyant2, blueVoyant3, blueVoyant4, 
       blueVoyant5, blueVoyant6, blueVoyant7
     ],
+    
     technologies: [
-      "React.js", "D3.js", "Chart.js", "Python", "WebSocket", 
-      "Redux", "Express.js", "PostgreSQL"
+      "React.js", "Context API", "Tailwind CSS", "Node.js", 
+      "Express.js", "D3.js", "Chart.js", "Client-side CSV Processing"
     ],
+    
     features: [
-      "Real-time data visualization",
-      "Interactive dashboard builder", 
-      "Advanced filtering and drill-down",
-      "Export capabilities (PDF, Excel)",
-      "Collaborative reporting",
-      "Role-based access control"
+      "Privacy-first architecture - files never stored on backend servers",
+      "Secure CSV upload and client-side processing for M365 Secure Score data",
+      "Dual-panel analytics: Recommended Actions vs High Impact Recommended Actions",
+      "Interactive data visualizations with gauge charts, donut charts, and bar graphs",
+      "Advanced filtering system with multi-select options for recommendations",
+      "Device risk analysis with breakdown by OS platform and management status",
+      "Exposure analysis by security domain (High/Medium/Low risk levels)",
+      "Client-side data export functionality for reports",
+      "Real-time score calculations and category-based grouping",
+      "Responsive data tables with sorting, pagination, and search",
+      "Display toggle between individual client metrics and industry averages",
+      "Color-coded status indicators matching Microsoft's security scoring system"
     ],
+    
     challenges: [
-      "Handling large datasets with smooth performance",
-      "Creating flexible chart configuration system",
-      "Implementing real-time data updates",
-      "Building responsive layouts for complex visualizations"
+      "Architecting secure data flow where sensitive files never touch the server",
+      "Processing large M365 Secure Score CSV files entirely in the browser without performance issues",
+      "Creating accurate filtering logic that properly categorizes recommended vs high-impact actions",
+      "Building complex calculations in Node.js that operate on data structures without storing files",
+      "Implementing color-coded status matching Microsoft's scoring system while handling inconsistent data",
+      "Designing intuitive UI for non-technical users to analyze complex security data",
+      "Debugging filtering issues (ensuring empty/non-color-coded rows excluded from high-impact counts)"
     ],
+    
     results: [
-      "40% faster data analysis workflows", 
-      "60% reduction in report generation time",
-      "Support for 10M+ data points",
-      "99.9% uptime in production"
+      "Successfully deployed as client-facing tool for BlueVoyant's enterprise customers",
+      "Zero data breaches - sensitive security data never exposed to BlueVoyant or servers",
+      "Reduced security assessment report generation from hours to minutes",
+      "Accurate processing and categorization of 190+ M365 security recommendations",
+      "Enabled self-service analytics for multiple enterprise clients",
+      "Client satisfaction with security model and functionality led to multi-phase engagement"
     ],
-    client: "Enterprise Analytics",
-    role: "Lead Full Stack Developer",
-    duration: "4 months",
-    team: "3 developers, 1 designer, 1 PM",
+    
+    client: "BlueVoyant (Microsoft Partner) - Client-Facing Tool",
+    role: "Full Stack Developer (Freelance)",
+    duration: "1 month (3 phases)",
+    team: "Solo development with client collaboration via Zoom",
     status: "Completed",
     liveUrl: null,
     githubUrl: null
