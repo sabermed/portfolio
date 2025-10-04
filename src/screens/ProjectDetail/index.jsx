@@ -324,6 +324,23 @@ const ProjectDetail = () => {
           </div>
         </section>
 
+        {/* Results & Impact Section */}
+        {project.results && project.results.length > 0 && (
+          <section className={styles.resultsSection}>
+            <div className={styles.container}>
+              <h2 className={styles.resultsTitle}>Results & Impact</h2>
+              <div className={styles.resultsGrid}>
+                {project.results.map((result, index) => (
+                  <div key={index} className={styles.resultCard}>
+                    <div className={styles.resultIcon}>✓</div>
+                    <p>{result}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Project Links CTA */}
         {(project.liveUrl || project.githubUrl) && (
           <section className={styles.projectCta}>
