@@ -35,6 +35,22 @@ import lms10 from "../assets/projects/lms/10.png"
 import lms11 from "../assets/projects/lms/11.png"
 import lms12 from "../assets/projects/lms/12.png"
 
+import lmsEnglish1 from "../assets/projects/lms-english/1.png"
+import lmsEnglish2 from "../assets/projects/lms-english/2.png"
+import lmsEnglish3 from "../assets/projects/lms-english/3.png"
+import lmsEnglish4 from "../assets/projects/lms-english/4.png"
+import lmsEnglish5 from "../assets/projects/lms-english/5.png"
+import lmsEnglish6 from "../assets/projects/lms-english/6.png"
+import lmsEnglish7 from "../assets/projects/lms-english/7.png"
+import lmsEnglish8 from "../assets/projects/lms-english/8.png"
+import lmsEnglish9 from "../assets/projects/lms-english/9.png"
+import lmsEnglish10 from "../assets/projects/lms-english/10.png"
+import lmsEnglish11 from "../assets/projects/lms-english/11.png"
+import lmsEnglish12 from "../assets/projects/lms-english/12.png"
+import lmsEnglish13 from "../assets/projects/lms-english/13.png"
+import lmsEnglish14 from "../assets/projects/lms-english/14.png"
+import lmsEnglish15 from "../assets/projects/lms-english/15.png"
+
 import pawsNeeds1 from "../assets/projects/pawsNeeds/1.jpg"
 import pawsNeeds2 from "../assets/projects/pawsNeeds/2.jpg"
 import pawsNeeds3 from "../assets/projects/pawsNeeds/3.jpg"
@@ -135,7 +151,7 @@ export const projects = [
     image: dashboard1,
     alt: "Dual-Sided Event Gamification Platform - Admin & User Portals",
     category: "Enterprise Software", 
-    year: "2022-2023",
+    year: "2022",
     slug: "event-gamification-platform",
     featured: true,
     
@@ -213,46 +229,130 @@ export const projects = [
     id: 3,
     title: "3 / Learning Management System",
     image: lms1,
-    alt: "Developer Learning and Job Search Platform",
+    alt: "E-Learning Platform with Course Management",
     category: "E-Learning Platform",
-    year: "2021", 
-    slug: "developer-lms-platform",
+    year: "2022", 
+    slug: "learning-management-system",
     featured: true,
-    description: "Mobile learning and job search platform for new developers. Features real-time web scraping from 20+ websites with personalized recommendations and development tools.",
-    longDescription: "A comprehensive learning ecosystem designed specifically for aspiring developers. The platform aggregates learning resources, job opportunities, and coding challenges from across the web, providing a one-stop solution for developer career growth. Features intelligent recommendations and progress tracking.",
+    
+    description: "Full-featured learning platform enabling instructors to create courses with mixed content types (videos, articles, quizzes, external resources) and students to enroll, track progress, and earn certificates.",
+    
+    longDescription: "A comprehensive e-learning platform built for educational content delivery. The system allows instructors to create structured courses with multiple content types including video lectures, reading materials, interactive quizzes, and embedded external resources. Students can browse courses, enroll, track their learning progress, take assessments, and earn completion certificates. Features responsive design for mobile learning and real-time progress tracking.",
+    
     mainImage: lms1,
     gallery: [
       lms1, lms2, lms3, lms4, lms5, lms6,
       lms7, lms8, lms9, lms10, lms11, lms12
     ],
+    
     technologies: [
-      "Flutter", "Django", "Python", "BeautifulSoup", 
-      "Selenium", "PostgreSQL", "Redis", "Celery"
+      "React.js", "Tailwind CSS", "Django", "Python", 
+      "Django REST Framework", "MySQL", "JWT Authentication", 
+      "Video Streaming", "PDF Generation"
     ],
+    
     features: [
-      "Real-time job scraping from 20+ sites",
-      "Personalized learning recommendations",
-      "Interactive coding challenges",
-      "Progress tracking and analytics",
-      "Resource bookmarking system", 
-      "Community features and forums"
+      "Multiple content types: video lessons, articles, quizzes, external resources (iframe embeds)",
+      "Student enrollment and course access management",
+      "Interactive quiz system with multiple question types and instant feedback",
+      "Progress tracking showing completion percentage per course and lesson",
+      "Certificate generation upon course completion with PDF download",
+      "Course browsing with filtering by category, difficulty level, and rating",
+      "Responsive video player with playback controls and quality selection",
     ],
+    
     challenges: [
-      "Handling diverse website structures for scraping",
-      "Building accurate recommendation algorithms",
-      "Managing high-frequency data updates",
-      "Creating engaging mobile learning experience"
+      "Implementing flexible content playlist supporting videos, text, quizzes, and iframe embeds",
+      "Building reliable video streaming with progress tracking and resume functionality",
+      "Creating quiz engine handling multiple question types with randomization",
+      "Designing efficient database schema for complex course structures",
+      "Implementing certificate generation with custom templates and user data",
+      "Optimizing video delivery and bandwidth usage for mobile users"
     ],
+    
     results: [
-      "1000+ registered developers",
-      "5000+ job listings scraped daily",
-      "80% user engagement rate",
-      "200+ successful job placements"
+      "Successfully deployed with 50+ courses across multiple categories",
+      "500+ active students with average 70% course completion rate",
+      "Smooth video streaming with minimal buffering issues",
+      "4.5/5 average platform rating from user feedback",
+      "Mobile-responsive design supporting learning on any device"
     ],
-    client: "ATOMIC IT",
-    role: "Full Stack Developer Intern",
-    duration: "4 months", 
-    team: "2 developers, 1 mentor",
+    
+    client: "IT Company (Saudi Arabia) - B2B Project",
+    role: "Full Stack Developer",
+    duration: "3 months",
+    team: "Solo development with client collaboration",
+    status: "Completed",
+    liveUrl: null,
+    githubUrl: null
+  },
+  {
+    id: 4,
+    title: "4 / Learning Management System v2",
+    image: lmsEnglish1,
+    alt: "Modern E-Learning Platform - English Version",
+    category: "E-Learning Platform",
+    year: "2022", 
+    slug: "learning-management-system-v2",
+    featured: true,
+    
+    description: "Redesigned English version of the learning platform with modern UI/UX, featuring course management, interactive quizzes, video streaming, and student progress tracking.",
+    
+    longDescription: "An enhanced version of the learning management system, completely redesigned with a modern purple-gradient interface and English localization. Built for a different client with improved user experience, this platform offers comprehensive course creation tools, student enrollment management, and interactive learning features. The system supports multiple content types including video lectures, text articles, quizzes, and external resources, providing a complete digital learning solution.",
+    
+    mainImage: lmsEnglish1,
+    gallery: [
+      lmsEnglish1, lmsEnglish2, lmsEnglish3, lmsEnglish4, lmsEnglish5, lmsEnglish6,
+      lmsEnglish7, lmsEnglish8, lmsEnglish9, lmsEnglish10, lmsEnglish11, lmsEnglish12, lmsEnglish13, lmsEnglish14, lmsEnglish15
+    ],
+    
+    technologies: [
+      "React.js", "Tailwind CSS", "Django", "Python", 
+      "Django REST Framework", "MySQL", "JWT Authentication", 
+      "Video Streaming", "Responsive Design"
+    ],
+    
+    features: [
+      "Modern gradient UI design with purple/blue color scheme",
+      "Complete authentication system (Login, Sign Up, Password Reset)",
+      "Course browsing with category filtering (Innovation, Design Thinking, User Experience Design)",
+      "Detailed course pages with introduction, content, and FAQ sections",
+      "Course enrollment system with registration confirmation",
+      "Structured course curriculum with expandable sections and lessons",
+      "Interactive quiz system with multiple-choice questions and instant feedback",
+      "Progress tracking showing completion percentage per course",
+      "Video player integration with course preview functionality",
+      "Student dashboard showing enrolled courses and learning progress",
+      "Course statistics display (1000+ Students, 15+ Available Courses, 5+ Categories)",
+      "Skills tagging system showing competencies gained from courses",
+      "Contact form for student support inquiries",
+      "Responsive design optimized for desktop and mobile learning",
+      "FAQ accordion sections for common course questions"
+    ],
+    
+    challenges: [
+      "Redesigning the entire UI while maintaining familiar LMS functionality",
+      "Implementing smooth transitions and micro-interactions for better UX",
+      "Creating a flexible course structure supporting various content types",
+      "Building an intuitive quiz interface with real-time validation",
+      "Optimizing video delivery for different bandwidth conditions",
+      "Ensuring responsive design works seamlessly across all devices",
+      "Localizing all content from Arabic to English for international audience"
+    ],
+    
+    results: [
+      "Successfully delivered redesigned platform with modern, appealing interface",
+      "Improved user engagement through enhanced UI/UX design",
+      "Clean, professional design suitable for corporate training programs",
+      "Positive client feedback on design modernization",
+      "Smooth course enrollment and learning experience",
+      "Mobile-responsive platform supporting learning on any device"
+    ],
+    
+    client: "IT Company (Saudi Arabia) - B2B Project (v2 for international client)",
+    role: "Full Stack Developer",
+    duration: "1 month",
+    team: "Solo development with client collaboration",
     status: "Completed",
     liveUrl: null,
     githubUrl: null
