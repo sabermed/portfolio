@@ -80,74 +80,7 @@ import projectManager7 from "../assets/projects/project manager/7.png"
 export const projects = [
   {
     id: 1,
-    title: "1 / BlueVoyant M365 Security Analytics",
-    image: blueVoyant1,
-    alt: "BlueVoyant M365 Secure Score Analytics Platform",
-    category: "Security Analytics",
-    year: "2023",
-    slug: "bluevoyant-m365-security-analytics",
-    featured: true,
-    
-    description: "Privacy-first security analytics platform for Microsoft 365 Secure Score assessment. Enables BlueVoyant's clients to analyze their security data without sharing sensitive files.",
-    
-    longDescription: "A client-facing security analytics platform built for BlueVoyant (Microsoft Partner) to provide their enterprise clients with self-service M365 Secure Score analysis. The platform features a privacy-first architecture where sensitive security data never leaves the client's browser - files are processed entirely client-side while the backend handles only calculations. This approach allows organizations to analyze their Microsoft 365 security posture, track compliance recommendations, and generate reports without exposing confidential data to third parties.",
-    
-    mainImage: blueVoyant1,
-    gallery: [
-      blueVoyant1, blueVoyant2, blueVoyant3, blueVoyant4, 
-      blueVoyant5, blueVoyant6, blueVoyant7
-    ],
-    
-    technologies: [
-      "React.js", "Context API", "Tailwind CSS", "Node.js", 
-      "Express.js", "D3.js", "Chart.js", "Client-side CSV Processing"
-    ],
-    
-    features: [
-      "Privacy-first architecture - files never stored on backend servers",
-      "Secure CSV upload and client-side processing for M365 Secure Score data",
-      "Dual-panel analytics: Recommended Actions vs High Impact Recommended Actions",
-      "Interactive data visualizations with gauge charts, donut charts, and bar graphs",
-      "Advanced filtering system with multi-select options for recommendations",
-      "Device risk analysis with breakdown by OS platform and management status",
-      "Exposure analysis by security domain (High/Medium/Low risk levels)",
-      "Client-side data export functionality for reports",
-      "Real-time score calculations and category-based grouping",
-      "Responsive data tables with sorting, pagination, and search",
-      "Display toggle between individual client metrics and industry averages",
-      "Color-coded status indicators matching Microsoft's security scoring system"
-    ],
-    
-    challenges: [
-      "Architecting secure data flow where sensitive files never touch the server",
-      "Processing large M365 Secure Score CSV files entirely in the browser without performance issues",
-      "Creating accurate filtering logic that properly categorizes recommended vs high-impact actions",
-      "Building complex calculations in Node.js that operate on data structures without storing files",
-      "Implementing color-coded status matching Microsoft's scoring system while handling inconsistent data",
-      "Designing intuitive UI for non-technical users to analyze complex security data",
-      "Debugging filtering issues (ensuring empty/non-color-coded rows excluded from high-impact counts)"
-    ],
-    
-    results: [
-      "Successfully deployed as client-facing tool for BlueVoyant's enterprise customers",
-      "Zero data breaches - sensitive security data never exposed to BlueVoyant or servers",
-      "Reduced security assessment report generation from hours to minutes",
-      "Accurate processing and categorization of 190+ M365 security recommendations",
-      "Enabled self-service analytics for multiple enterprise clients",
-      "Client satisfaction with security model and functionality led to multi-phase engagement"
-    ],
-    
-    client: "BlueVoyant (Microsoft Partner) - Client-Facing Tool",
-    role: "Full Stack Developer (Freelance)",
-    duration: "1 month (3 phases)",
-    team: "Solo development with client collaboration via Zoom",
-    status: "Completed",
-    liveUrl: null,
-    githubUrl: null
-  },
-  {
-    id: 2,
-    title: "2 / Event Gamification & Engagement Platform",
+    title: "1 / Event Gamification & Engagement Platform",
     image: dashboard1,
     alt: "Dual-Sided Event Gamification Platform - Admin & User Portals",
     category: "Enterprise Software", 
@@ -226,8 +159,8 @@ export const projects = [
     githubUrl: null
   },
   {
-    id: 3,
-    title: "3 / Learning Management System",
+    id: 2,
+    title: "2 / Learning Management System",
     image: lms1,
     alt: "E-Learning Platform with Course Management",
     category: "E-Learning Platform",
@@ -246,9 +179,8 @@ export const projects = [
     ],
     
     technologies: [
-      "React.js", "Tailwind CSS", "Django", "Python", 
-      "Django REST Framework", "MySQL", "JWT Authentication", 
-      "Video Streaming", "PDF Generation"
+      "React.js", "Tailwind CSS", "Node.js", "Express.js",
+      "MongoDB", "JWT Authentication", "Video Streaming", "PDF Generation"
     ],
     
     features: [
@@ -287,8 +219,8 @@ export const projects = [
     githubUrl: null
   },
   {
-    id: 4,
-    title: "4 / Learning Management System v2",
+    id: 3,
+    title: "3 / Learning Management System v2",
     image: lmsEnglish1,
     alt: "Modern E-Learning Platform - English Version",
     category: "E-Learning Platform",
@@ -303,13 +235,13 @@ export const projects = [
     mainImage: lmsEnglish1,
     gallery: [
       lmsEnglish1, lmsEnglish2, lmsEnglish3, lmsEnglish4, lmsEnglish5, lmsEnglish6,
-      lmsEnglish7, lmsEnglish8, lmsEnglish9, lmsEnglish10, lmsEnglish11, lmsEnglish12, lmsEnglish13, lmsEnglish14, lmsEnglish15
+      lmsEnglish7, lmsEnglish8, lmsEnglish9, lmsEnglish10, lmsEnglish11, lmsEnglish12, 
+      lmsEnglish13, lmsEnglish14, lmsEnglish15
     ],
     
     technologies: [
-      "React.js", "Tailwind CSS", "Django", "Python", 
-      "Django REST Framework", "MySQL", "JWT Authentication", 
-      "Video Streaming", "Responsive Design"
+      "React.js", "Tailwind CSS", "Node.js", "Express.js",
+      "MongoDB", "JWT Authentication", "Video Streaming", "Responsive Design"
     ],
     
     features: [
@@ -359,49 +291,68 @@ export const projects = [
   },
   {
     id: 4,
-    title: "4 / 3D Project Management System",
+    title: "4 / Multi-Platform Management Dashboard",
     image: projectManager1,
-    alt: "3D IFC Viewer Project Management Platform",
-    category: "Project Management",
-    year: "2023",
-    slug: "3d-project-management-system",
-    featured: false,
-    description: "Project management system with custom IFC viewer for viewing, editing, and measuring 3D plans exported from Revit. Features real-time collaboration and file management.",
-    longDescription: "An advanced project management platform designed for architecture and construction teams. The system integrates 3D model viewing with traditional project management tools, allowing teams to collaborate on complex architectural projects with visual context. Features custom IFC viewer with annotation tools.",
+    alt: "Centralized Platform Management Dashboard",
+    category: "Management Platform",
+    year: "2022",
+    slug: "multi-platform-management-dashboard",
+    featured: true,
+    
+    description: "Centralized dashboard providing unified access to multiple client platforms (CMS, LMS, and custom modules) with aggregated analytics and single sign-on functionality.",
+    
+    longDescription: "A unified management dashboard built as a wrapper/portal for the Saudi IT company's multiple client platforms. This central hub allows the client to access their Event Gamification Platform, Learning Management Systems, and other modules from a single interface. The dashboard aggregates key metrics across all platforms, showing total clients, projects, and users, while providing seamless navigation between different systems with single sign-on capabilities.",
+    
     mainImage: projectManager1,
     gallery: [
-      projectManager1, projectManager2, projectManager3, projectManager4,
-      projectManager5, projectManager6, projectManager7
+      projectManager1, projectManager2, projectManager3, projectManager4, projectManager5, projectManager6, projectManager7
     ],
+    
     technologies: [
-      "React.js", "Three.js", "IFC.js", "NestJS", "TypeScript",
-      "Socket.IO", "PostgreSQL", "Docker", "Nginx"
+      "React.js", "Node.js", "MongoDB", "Express.js",
+      "JWT Authentication", "Chart.js", "Redux", 
+      "Single Sign-On (SSO)", "Responsive Design"
     ],
+    
     features: [
-      "3D IFC model viewer with 60fps performance",
-      "Real-time collaboration tools",
-      "Annotation and measurement tools",
-      "Version control for 3D models",
-      "Budget calculation system",
-      "Role-based access control"
+      "Unified dashboard showing all available platforms (CMS, LMS, Modules 3-6)",
+      "Platform selection interface with visual cards and key statistics per platform",
+      "Aggregated analytics showing total clients, projects, and users across all systems",
+      "Single sign-on (SSO) functionality for seamless platform switching",
+      "Centralized authentication managing access to multiple platforms",
+      "Real-time statistics with growth indicators and trend visualizations",
+      "Platform filtering and search capabilities",
+      "Consistent navigation between integrated platforms",
+      "Client profile management accessible from central dashboard",
+      "Empty state screens prompting platform creation",
+      "Responsive design for desktop and tablet access",
+      "Visual consistency with the Event Gamification and LMS platforms"
     ],
+    
     challenges: [
-      "Optimizing 3D rendering performance",
-      "Handling large architectural files",
-      "Implementing real-time collaboration",
-      "Building intuitive 3D interaction tools"
+      "Implementing secure single sign-on across multiple separate platforms",
+      "Aggregating statistics from different databases and systems in real-time",
+      "Maintaining consistent UI/UX across the wrapper and all integrated platforms",
+      "Handling session management when users switch between platforms",
+      "Building flexible architecture to accommodate future platform additions",
+      "Ensuring seamless navigation without repeated authentication",
+      "Creating intuitive platform selection interface for non-technical users"
     ],
+    
     results: [
-      "60fps performance with complex models",
-      "50% faster project review cycles",
-      "Real-time collaboration for 20+ users",
-      "30% reduction in project coordination time"
+      "Successfully deployed as centralized access point for all client platforms",
+      "Reduced platform switching friction with single sign-on implementation",
+      "Client can monitor all platform metrics from one dashboard",
+      "Consistent branding and navigation across all integrated systems",
+      "Streamlined user management across multiple platforms",
+      "Easy scalability for adding new platforms to the dashboard"
     ],
-    client: "ATOMIC IT",
+    
+    client: "IT Company (Saudi Arabia) - B2B Project",
     role: "Full Stack Developer",
-    duration: "4 months",
-    team: "3 developers, 1 designer",
-    status: "Production",
+    duration: "2 months",
+    team: "Solo development with client collaboration",
+    status: "Completed",
     liveUrl: null,
     githubUrl: null
   },
@@ -457,53 +408,120 @@ export const projects = [
   },
   {
     id: 6,
-    title: "2 / Solar Panel Design Platform",
-    image: dashboard1,
-    alt: "Solar Panel Design and Estimation Tool",
-    category: "Simulation Platform", 
+    title: "6 / BlueVoyant M365 Security Analytics",
+    image: blueVoyant1,
+    alt: "BlueVoyant M365 Secure Score Analytics Platform",
+    category: "Security Analytics",
     year: "2023",
-    slug: "solar-panel-design-platform",
+    slug: "bluevoyant-m365-security-analytics",
     featured: true,
-    description: "OpenSolar-like tool for solar panel placement and energy estimation. Allows users to simulate panel placements, estimate energy production, and calculate cost efficiencies.",
-    longDescription: "A comprehensive solar energy design platform that empowers users to create optimal solar installations. The tool combines 3D modeling, geographic data, and energy calculations to provide accurate estimates for solar projects. Used by solar installers and energy consultants across multiple markets.",
-    mainImage: dashboard1,
+    
+    description: "Privacy-first security analytics platform for Microsoft 365 Secure Score assessment. Enables BlueVoyant's clients to analyze their security data without sharing sensitive files.",
+    
+    longDescription: "A client-facing security analytics platform built for BlueVoyant (Microsoft Partner) to provide their enterprise clients with self-service M365 Secure Score analysis. The platform features a privacy-first architecture where sensitive security data never leaves the client's browser - files are processed entirely client-side while the backend handles only calculations. This approach allows organizations to analyze their Microsoft 365 security posture, track compliance recommendations, and generate reports without exposing confidential data to third parties.",
+    
+    mainImage: blueVoyant1,
     gallery: [
-      dashboard1, dashboard2, dashboard3, dashboard4, dashboard5,
-      dashboard6, dashboard7, dashboard8, dashboard9, dashboard10,
-      dashboard11, dashboard12, dashboard13, dashboard14, dashboard15
+      blueVoyant1, blueVoyant2, blueVoyant3, blueVoyant4, 
+      blueVoyant5, blueVoyant6, blueVoyant7
     ],
+    
     technologies: [
-      "React.js", "Three.js", "Node.js", "MongoDB", 
-      "Express.js", "Solar API", "Google Maps API", "PDF Generation"
+      "React.js", "Context API", "Tailwind CSS", "Node.js", 
+      "Express.js", "D3.js", "Chart.js", "Client-side CSV Processing"
     ],
+    
     features: [
-      "3D roof modeling and panel placement",
-      "Shading analysis and optimization",
-      "Energy production calculations", 
-      "Cost-benefit analysis",
-      "Weather data integration",
-      "Automated proposal generation"
+      "Privacy-first architecture - files never stored on backend servers",
+      "Secure CSV upload and client-side processing for M365 Secure Score data",
+      "Dual-panel analytics: Recommended Actions vs High Impact Recommended Actions",
+      "Interactive data visualizations with gauge charts, donut charts, and bar graphs",
+      "Advanced filtering system with multi-select options for recommendations",
+      "Device risk analysis with breakdown by OS platform and management status",
+      "Exposure analysis by security domain (High/Medium/Low risk levels)",
+      "Client-side data export functionality for reports",
+      "Real-time score calculations and category-based grouping",
+      "Responsive data tables with sorting, pagination, and search",
+      "Display toggle between individual client metrics and industry averages",
+      "Color-coded status indicators matching Microsoft's security scoring system"
     ],
+    
     challenges: [
-      "Accurate 3D modeling of complex roof structures",
-      "Real-time shading calculations",
-      "Integration with multiple solar APIs",
-      "Performance optimization for large installations"
+      "Architecting secure data flow where sensitive files never touch the server",
+      "Processing large M365 Secure Score CSV files entirely in the browser without performance issues",
+      "Creating accurate filtering logic that properly categorizes recommended vs high-impact actions",
+      "Building complex calculations in Node.js that operate on data structures without storing files",
+      "Implementing color-coded status matching Microsoft's scoring system while handling inconsistent data",
+      "Designing intuitive UI for non-technical users to analyze complex security data",
+      "Debugging filtering issues (ensuring empty/non-color-coded rows excluded from high-impact counts)"
     ],
+    
     results: [
-      "30% faster design process",
-      "95% accuracy in energy predictions", 
-      "50+ successful installations",
-      "25% increase in conversion rates"
+      "Successfully deployed as client-facing tool for BlueVoyant's enterprise customers",
+      "Zero data breaches - sensitive security data never exposed to BlueVoyant or servers",
+      "Reduced security assessment report generation from hours to minutes",
+      "Accurate processing and categorization of 190+ M365 security recommendations",
+      "Enabled self-service analytics for multiple enterprise clients",
+      "Client satisfaction with security model and functionality led to multi-phase engagement"
     ],
-    client: "ENEFFIC",
-    role: "Full Stack Developer", 
-    duration: "6 months",
-    team: "2 developers, 1 designer",
-    status: "Production",
+    
+    client: "BlueVoyant (Microsoft Partner) - Client-Facing Tool",
+    role: "Full Stack Developer (Freelance)",
+    duration: "1 month (3 phases)",
+    team: "Solo development with client collaboration via Zoom",
+    status: "Completed",
     liveUrl: null,
     githubUrl: null
   },
+  // {
+  //   id: 6,
+  //   title: "2 / Solar Panel Design Platform",
+  //   image: dashboard1,
+  //   alt: "Solar Panel Design and Estimation Tool",
+  //   category: "Simulation Platform", 
+  //   year: "2023",
+  //   slug: "solar-panel-design-platform",
+  //   featured: true,
+  //   description: "OpenSolar-like tool for solar panel placement and energy estimation. Allows users to simulate panel placements, estimate energy production, and calculate cost efficiencies.",
+  //   longDescription: "A comprehensive solar energy design platform that empowers users to create optimal solar installations. The tool combines 3D modeling, geographic data, and energy calculations to provide accurate estimates for solar projects. Used by solar installers and energy consultants across multiple markets.",
+  //   mainImage: dashboard1,
+  //   gallery: [
+  //     dashboard1, dashboard2, dashboard3, dashboard4, dashboard5,
+  //     dashboard6, dashboard7, dashboard8, dashboard9, dashboard10,
+  //     dashboard11, dashboard12, dashboard13, dashboard14, dashboard15
+  //   ],
+  //   technologies: [
+  //     "React.js", "Three.js", "Node.js", "MongoDB", 
+  //     "Express.js", "Solar API", "Google Maps API", "PDF Generation"
+  //   ],
+  //   features: [
+  //     "3D roof modeling and panel placement",
+  //     "Shading analysis and optimization",
+  //     "Energy production calculations", 
+  //     "Cost-benefit analysis",
+  //     "Weather data integration",
+  //     "Automated proposal generation"
+  //   ],
+  //   challenges: [
+  //     "Accurate 3D modeling of complex roof structures",
+  //     "Real-time shading calculations",
+  //     "Integration with multiple solar APIs",
+  //     "Performance optimization for large installations"
+  //   ],
+  //   results: [
+  //     "30% faster design process",
+  //     "95% accuracy in energy predictions", 
+  //     "50+ successful installations",
+  //     "25% increase in conversion rates"
+  //   ],
+  //   client: "Eneffic",
+  //   role: "Full Stack Developer", 
+  //   duration: "6 months",
+  //   team: "2 developers, 1 designer",
+  //   status: "Production",
+  //   liveUrl: null,
+  //   githubUrl: null
+  // },
 ];
 
 // Featured projects for homepage
