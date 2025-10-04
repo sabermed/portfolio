@@ -273,13 +273,6 @@ const ProjectDetail = () => {
                         </div>
                       ))}
                     </div>
-                    
-                    {/* Scroll indicators for many images */}
-                    {project.gallery.length > 6 && (
-                      <div className={styles.scrollIndicators}>
-                        <div className={styles.scrollHint}>Swipe or scroll to see more</div>
-                      </div>
-                    )}
                   </div>
                 )}
               </div>
@@ -298,7 +291,7 @@ const ProjectDetail = () => {
                   <div className={styles.featuresList}>
                     {project.features.map((feature, index) => (
                       <div key={index} className={styles.featureItem}>
-                        <span className={styles.featureNumber}>0{index + 1}</span>
+                        <span className={styles.featureNumber}>{index >= 9 ? index + 1 : "0"+(index + 1)}</span>
                         <p>{feature}</p>
                       </div>
                     ))}
@@ -323,6 +316,23 @@ const ProjectDetail = () => {
             </div>
           </div>
         </section>
+
+        {/* Results & Impact Section */}
+        {project.results && project.results.length > 0 && (
+          <section className={styles.resultsSection}>
+            <div className={styles.container}>
+              <h2 className={styles.resultsTitle}>Results & Impact</h2>
+              <div className={styles.resultsGrid}>
+                {project.results.map((result, index) => (
+                  <div key={index} className={styles.resultCard}>
+                    <div className={styles.resultIcon}>✓</div>
+                    <p>{result}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Project Links CTA */}
         {(project.liveUrl || project.githubUrl) && (

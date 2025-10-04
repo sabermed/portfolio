@@ -299,19 +299,6 @@
             }
           }
         }
-
-        .scrollIndicators {
-          margin-top: 16px;
-          text-align: center;
-
-          .scrollHint {
-            font-family: 'Inter', sans-serif;
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.5);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-          }
-        }
       }
     }
   }
@@ -402,6 +389,67 @@
             color: rgba(255, 255, 255, 0.8);
             margin: 0;
           }
+        }
+      }
+    }
+  }
+
+  // Results & Impact Section
+  .resultsSection {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+
+    .resultsTitle {
+      font-family: 'Roxie Rossa', serif;
+      font-size: 48px;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .resultsGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+
+      .resultCard {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 28px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        transition: all 0.4s ease;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.06);
+          border-color: rgba(255, 255, 255, 0.2);
+          transform: translateY(-6px);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .resultIcon {
+          font-size: 24px;
+          color: #4ade80;
+          min-width: 32px;
+          height: 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(74, 222, 128, 0.1);
+          border-radius: 8px;
+          flex-shrink: 0;
+        }
+
+        p {
+          font-family: 'Inter', sans-serif;
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 1.6;
+          color: rgba(255, 255, 255, 0.85);
+          margin: 0;
         }
       }
     }
