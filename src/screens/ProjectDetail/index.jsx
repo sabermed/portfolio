@@ -273,13 +273,6 @@ const ProjectDetail = () => {
                         </div>
                       ))}
                     </div>
-                    
-                    {/* Scroll indicators for many images */}
-                    {project.gallery.length > 6 && (
-                      <div className={styles.scrollIndicators}>
-                        <div className={styles.scrollHint}>Swipe or scroll to see more</div>
-                      </div>
-                    )}
                   </div>
                 )}
               </div>
