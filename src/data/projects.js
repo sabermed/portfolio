@@ -259,7 +259,55 @@ export const projects = [
   },
   {
     id: 4,
-    title: "4 / PawsNeeds Pet Services",
+    title: "4 / 3D Project Management System",
+    image: projectManager1,
+    alt: "3D IFC Viewer Project Management Platform",
+    category: "Project Management",
+    year: "2023",
+    slug: "3d-project-management-system",
+    featured: false,
+    description: "Project management system with custom IFC viewer for viewing, editing, and measuring 3D plans exported from Revit. Features real-time collaboration and file management.",
+    longDescription: "An advanced project management platform designed for architecture and construction teams. The system integrates 3D model viewing with traditional project management tools, allowing teams to collaborate on complex architectural projects with visual context. Features custom IFC viewer with annotation tools.",
+    mainImage: projectManager1,
+    gallery: [
+      projectManager1, projectManager2, projectManager3, projectManager4,
+      projectManager5, projectManager6, projectManager7
+    ],
+    technologies: [
+      "React.js", "Three.js", "IFC.js", "NestJS", "TypeScript",
+      "Socket.IO", "PostgreSQL", "Docker", "Nginx"
+    ],
+    features: [
+      "3D IFC model viewer with 60fps performance",
+      "Real-time collaboration tools",
+      "Annotation and measurement tools",
+      "Version control for 3D models",
+      "Budget calculation system",
+      "Role-based access control"
+    ],
+    challenges: [
+      "Optimizing 3D rendering performance",
+      "Handling large architectural files",
+      "Implementing real-time collaboration",
+      "Building intuitive 3D interaction tools"
+    ],
+    results: [
+      "60fps performance with complex models",
+      "50% faster project review cycles",
+      "Real-time collaboration for 20+ users",
+      "30% reduction in project coordination time"
+    ],
+    client: "ATOMIC IT",
+    role: "Full Stack Developer",
+    duration: "4 months",
+    team: "3 developers, 1 designer",
+    status: "Production",
+    liveUrl: null,
+    githubUrl: null
+  },
+  {
+    id: 5,
+    title: "5 / PawsNeeds Pet Services",
     image: pawsNeeds1,
     alt: "Cross-platform Pet Services Marketplace",
     category: "Mobile Application",
@@ -304,54 +352,6 @@ export const projects = [
     duration: "5 months",
     team: "Solo development",
     status: "Completed",
-    liveUrl: null,
-    githubUrl: null
-  },
-  {
-    id: 5,
-    title: "5 / 3D Project Management System",
-    image: projectManager1,
-    alt: "3D IFC Viewer Project Management Platform",
-    category: "Project Management",
-    year: "2023",
-    slug: "3d-project-management-system",
-    featured: false,
-    description: "Project management system with custom IFC viewer for viewing, editing, and measuring 3D plans exported from Revit. Features real-time collaboration and file management.",
-    longDescription: "An advanced project management platform designed for architecture and construction teams. The system integrates 3D model viewing with traditional project management tools, allowing teams to collaborate on complex architectural projects with visual context. Features custom IFC viewer with annotation tools.",
-    mainImage: projectManager1,
-    gallery: [
-      projectManager1, projectManager2, projectManager3, projectManager4,
-      projectManager5, projectManager6, projectManager7
-    ],
-    technologies: [
-      "React.js", "Three.js", "IFC.js", "NestJS", "TypeScript",
-      "Socket.IO", "PostgreSQL", "Docker", "Nginx"
-    ],
-    features: [
-      "3D IFC model viewer with 60fps performance",
-      "Real-time collaboration tools",
-      "Annotation and measurement tools",
-      "Version control for 3D models",
-      "Budget calculation system",
-      "Role-based access control"
-    ],
-    challenges: [
-      "Optimizing 3D rendering performance",
-      "Handling large architectural files",
-      "Implementing real-time collaboration",
-      "Building intuitive 3D interaction tools"
-    ],
-    results: [
-      "60fps performance with complex models",
-      "50% faster project review cycles",
-      "Real-time collaboration for 20+ users",
-      "30% reduction in project coordination time"
-    ],
-    client: "ATOMIC IT",
-    role: "Full Stack Developer",
-    duration: "4 months",
-    team: "3 developers, 1 designer",
-    status: "Production",
     liveUrl: null,
     githubUrl: null
   },
